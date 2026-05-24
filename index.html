@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NLI Packaging Machines — 5 Interactive Premium Designs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Fraunces:ital,wght@0,700;1,700&family=Outfit:wght@300;400;500;600;700;800&family=Oxanium:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{overflow-x:hidden;cursor:none;font-family:'Outfit',sans-serif}
+#cur{position:fixed;width:12px;height:12px;background:#fff;border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);mix-blend-mode:difference;transition:width .2s,height .2s}
+#trail{position:fixed;width:36px;height:36px;border:1px solid rgba(255,255,255,.35);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:left .1s,top .1s}
+.tabs{position:fixed;top:0;left:0;right:0;z-index:9999;display:flex;background:#050505;border-bottom:1px solid rgba(255,255,255,.08);height:50px;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:1;min-width:140px;border:none;background:transparent;color:rgba(255,255,255,.35);font-family:'Oxanium',sans-serif;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;cursor:none;transition:.3s;position:relative}
+.tab::after{content:'';position:absolute;bottom:0;left:50%;right:50%;height:2px;background:var(--tc);transition:.35s}
+.tab.on{color:#fff}.tab.on::after{left:0;right:0}
+.page{display:none;padding-top:50px}.page.on{display:block}
+.anim{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
+.anim.vis{opacity:1;transform:translateY(0)}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes fu{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes scan{0%{top:0;opacity:.6}100%{top:100%;opacity:0}}
+@keyframes glow{0%,100%{text-shadow:0 0 30px rgba(0,255,200,.5)}50%{text-shadow:0 0 60px rgba(0,255,200,.8)}}
+
+/* ───── IMAGE SYSTEM ───── */
+/* All images use reliable Unsplash/Picsum sources with industrial themes */
+.img-factory{background:url('https://images.unsplash.com/photo-1565793979680-4d9a94f7e92e?w=1200&q=80') center/cover no-repeat}
+.img-machines{background:url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1200&q=80') center/cover no-repeat}
+.img-sewing{background:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80') center/cover no-repeat}
+.img-bagging{background:url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80') center/cover no-repeat}
+.img-printing{background:url('https://images.unsplash.com/photo-1562408590-e32931084e23?w=800&q=80') center/cover no-repeat}
+.img-bags{background:url('https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=800&q=80') center/cover no-repeat}
+.img-food{background:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80') center/cover no-repeat}
+.img-cement{background:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80') center/cover no-repeat}
+.img-chemical{background:url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80') center/cover no-repeat}
+.img-agri{background:url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80') center/cover no-repeat}
+.img-mineral{background:url('https://images.unsplash.com/photo-1581093196277-9f6e9b964f4f?w=800&q=80') center/cover no-repeat}
+.img-pharma{background:url('https://images.unsplash.com/photo-1585435557343-3b092031a831?w=800&q=80') center/cover no-repeat}
+.img-hero2{background:url('https://images.unsplash.com/photo-1513828583688-c52646db42da?w=1400&q=80') center/cover no-repeat}
+.img-hero3{background:url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1400&q=80') center/cover no-repeat}
+.img-heritage{background:url('https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?w=900&q=80') center/cover no-repeat}
+.img-process{background:url('https://images.unsplash.com/photo-1617802690658-1173a812650d?w=1200&q=80') center/cover no-repeat}
+
+/* ═══ D1 — THE FORGE ═══ */
+.d1{background:#050505;color:#fff}
+.d1-nav{position:sticky;top:50px;z-index:100;background:rgba(5,5,5,.97);border-bottom:1px solid rgba(240,180,41,.12);display:flex;align-items:center;justify-content:space-between;padding:0 60px;height:64px}
+.d1-logo{font-family:'Anton',sans-serif;font-size:22px;letter-spacing:3px;background:linear-gradient(135deg,#f0b429,#ff6b00);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.d1-nav-links{display:flex;gap:32px}
+.d1-nav-links a{text-decoration:none;color:rgba(255,255,255,.4);font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;transition:.2s}
+.d1-nav-links a:hover{color:#f0b429}
+.d1-cta-btn{background:linear-gradient(135deg,#f0b429,#ff6b00);color:#000;padding:10px 26px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border:none;cursor:none;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,0 100%);transition:.3s}
+.d1-cta-btn:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(255,107,0,.4)}
+.d1-hero{position:relative;height:100vh;overflow:hidden;display:flex;align-items:center}
+.d1-hero-bg{position:absolute;inset:0;transform:scale(1.06);transition:transform 18s ease}
+.d1-hero-bg.img-factory{filter:brightness(.22) saturate(1.5)}
+.d1-scanlines{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,.1) 3px,rgba(0,0,0,.1) 4px);z-index:1;pointer-events:none}
+.d1-fire{position:absolute;inset:0;background:radial-gradient(ellipse at 65% 80%,rgba(255,107,0,.2),transparent 55%);z-index:1;pointer-events:none}
+.d1-hero-content{position:relative;z-index:3;padding:0 80px}
+.d1-eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:30px;animation:fu .8s ease .2s both}
+.d1-eyebrow-bar{width:42px;height:1px;background:linear-gradient(90deg,#f0b429,#ff6b00)}
+.d1-eyebrow-text{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:4px;color:#f0b429;text-transform:uppercase}
+.d1-h1{font-family:'Anton',sans-serif;font-size:clamp(64px,9vw,140px);line-height:.9;text-transform:uppercase;animation:fu .9s ease .35s both}
+.d1-h1 .out{-webkit-text-stroke:1px rgba(255,255,255,.25);color:transparent}
+.d1-h1 .fire{background:linear-gradient(135deg,#f0b429,#ff6b00);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.d1-sub{font-size:clamp(14px,1.3vw,17px);font-weight:300;color:rgba(255,255,255,.45);margin-top:22px;max-width:450px;line-height:1.8;animation:fu .9s ease .5s both}
+.d1-btns{display:flex;gap:16px;margin-top:40px;animation:fu .9s ease .65s both}
+.d1-btn1{padding:14px 40px;background:linear-gradient(135deg,#f0b429,#ff6b00);color:#000;font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border:none;cursor:none;clip-path:polygon(0 0,calc(100% - 11px) 0,100% 11px,100% 100%,0 100%);transition:.3s}
+.d1-btn1:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(255,107,0,.4)}
+.d1-btn2{padding:14px 40px;background:transparent;color:#fff;font-family:'Outfit',sans-serif;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;border:1px solid rgba(255,255,255,.22);cursor:none;clip-path:polygon(0 0,calc(100% - 11px) 0,100% 11px,100% 100%,0 100%);transition:.3s}
+.d1-btn2:hover{border-color:#f0b429;color:#f0b429}
+.d1-statsbar{position:absolute;bottom:0;left:0;right:0;z-index:4;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.07)}
+.d1-stat{padding:20px 30px;border-right:1px solid rgba(255,255,255,.06);background:rgba(0,0,0,.75);backdrop-filter:blur(20px)}
+.d1-stat:last-child{border-right:none}
+.d1-stat-n{font-family:'Anton',sans-serif;font-size:36px;background:linear-gradient(135deg,#f0b429,#ff6b00);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1}
+.d1-stat-l{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:5px}
+.d1-marquee{overflow:hidden;background:linear-gradient(90deg,#f0b429,#ff6b00);padding:12px 0}
+.d1-mtrack{display:flex;animation:mq 18s linear infinite;width:max-content}
+.d1-mi{font-family:'Anton',sans-serif;font-size:13px;letter-spacing:3px;text-transform:uppercase;color:rgba(0,0,0,.7);padding:0 32px;white-space:nowrap}
+.d1-products{background:#080808}
+.d1-prod-row{display:grid;grid-template-columns:1fr 1fr;min-height:560px;border-bottom:1px solid rgba(255,255,255,.04)}
+.d1-prod-row:nth-child(even) .d1-prod-img{order:2}
+.d1-prod-row:nth-child(even) .d1-prod-txt{order:1}
+.d1-prod-img{position:relative;overflow:hidden;min-height:400px}
+.d1-prod-img-bg{position:absolute;inset:0;transition:.8s}
+.d1-prod-row:hover .d1-prod-img-bg{transform:scale(1.06)}
+.d1-prod-img-bg.img-sewing{filter:brightness(.55) saturate(.65)}
+.d1-prod-img-bg.img-bags{filter:brightness(.55) saturate(.65)}
+.d1-prod-img-bg.img-bagging{filter:brightness(.55) saturate(.65)}
+.d1-prod-img-bg.img-printing{filter:brightness(.55) saturate(.65)}
+.d1-prod-row:hover .d1-prod-img-bg{filter:brightness(.75) saturate(1)!important}
+.d1-prod-num{position:absolute;top:24px;left:24px;font-family:'Anton',sans-serif;font-size:68px;color:rgba(255,255,255,.05);line-height:1}
+.d1-prod-txt{background:#0d0d0d;padding:56px 48px;display:flex;flex-direction:column;justify-content:center}
+.d1-prod-tag{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:4px;color:#f0b429;text-transform:uppercase;margin-bottom:18px}
+.d1-prod-title{font-family:'Anton',sans-serif;font-size:clamp(28px,3vw,46px);color:#fff;text-transform:uppercase;line-height:1.05}
+.d1-prod-desc{font-size:14px;color:rgba(255,255,255,.4);margin-top:16px;line-height:1.82;font-weight:300}
+.d1-prod-link{display:inline-flex;align-items:center;gap:10px;margin-top:28px;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:2px;color:#f0b429;text-transform:uppercase;text-decoration:none;cursor:none;transition:.3s}
+.d1-prod-link:hover{gap:18px}
+.d1-link-bar{width:26px;height:1px;background:#f0b429;transition:.3s}
+.d1-ind{padding:80px 56px;background:#060606}
+.d1-sec-tag{display:block;text-align:center;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:4px;color:#f0b429;text-transform:uppercase;margin-bottom:10px}
+.d1-sec-h2{font-family:'Anton',sans-serif;font-size:clamp(34px,5vw,68px);color:#fff;text-transform:uppercase;text-align:center;letter-spacing:1px}
+.d1-ind-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:50px}
+.d1-ind-tile{position:relative;height:280px;overflow:hidden;cursor:none}
+.d1-ind-tile-bg{position:absolute;inset:0;transition:.6s}
+.d1-ind-tile:hover .d1-ind-tile-bg{transform:scale(1.08)}
+.d1-ind-tile-bg.img-food{filter:saturate(.3) brightness(.45)}
+.d1-ind-tile-bg.img-chemical{filter:saturate(.3) brightness(.45)}
+.d1-ind-tile-bg.img-cement{filter:saturate(.3) brightness(.45)}
+.d1-ind-tile-bg.img-agri{filter:saturate(.3) brightness(.45)}
+.d1-ind-tile-bg.img-mineral{filter:saturate(.3) brightness(.45)}
+.d1-ind-tile-bg.img-pharma{filter:saturate(.3) brightness(.45)}
+.d1-ind-tile:hover .d1-ind-tile-bg{filter:saturate(.85) brightness(.6)!important}
+.d1-ind-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.92) 28%,transparent 70%);display:flex;flex-direction:column;justify-content:flex-end;padding:24px}
+.d1-ind-border{position:absolute;inset:0;border:2px solid transparent;transition:.4s;pointer-events:none}
+.d1-ind-tile:hover .d1-ind-border{border-color:#f0b429}
+.d1-ind-num{font-family:'Space Mono',monospace;font-size:10px;color:#f0b429;letter-spacing:3px;margin-bottom:5px}
+.d1-ind-name{font-family:'Anton',sans-serif;font-size:20px;color:#fff;text-transform:uppercase;letter-spacing:1px}
+.d1-ind-sub{font-size:11px;color:rgba(255,255,255,.36);letter-spacing:2px;text-transform:uppercase;margin-top:4px}
+.d1-cta-sec{position:relative;min-height:460px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.d1-cta-bg-el{position:absolute;inset:0;filter:brightness(.18) saturate(1.4)}
+.d1-cta-glow{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,rgba(255,107,0,.28),transparent 60%)}
+.d1-cta-content{position:relative;z-index:2;padding:80px 40px}
+.d1-cta-h2{font-family:'Anton',sans-serif;font-size:clamp(42px,7vw,90px);color:#fff;text-transform:uppercase;line-height:.92;letter-spacing:-1px}
+.d1-cta-h2 span{background:linear-gradient(135deg,#f0b429,#ff6b00);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.d1-cta-p{font-size:15px;color:rgba(255,255,255,.42);margin-top:16px;font-weight:300}
+.d1-footer{background:#030303;padding:60px 56px 26px;border-top:1px solid rgba(255,255,255,.05)}
+.d1-footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.05)}
+.d1-footer-logo{font-family:'Anton',sans-serif;font-size:28px;background:linear-gradient(135deg,#f0b429,#ff6b00);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:10px}
+.d1-footer-desc{font-size:13px;color:rgba(255,255,255,.26);line-height:1.8;max-width:220px}
+.d1-fcol-h{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.2);margin-bottom:16px}
+.d1-flinks a{display:block;color:rgba(255,255,255,.35);text-decoration:none;font-size:13px;margin-bottom:8px;transition:.2s}
+.d1-flinks a:hover{color:#f0b429}
+.d1-footer-bottom{display:flex;justify-content:space-between;padding-top:20px;font-family:'Space Mono',monospace;font-size:9px;color:rgba(255,255,255,.15);letter-spacing:1px}
+
+/* ═══ D2 — THE BLUEPRINT ═══ */
+.d2{background:#eeebe4;color:#111;font-family:'Syne',sans-serif}
+.d2-nav{position:sticky;top:50px;z-index:100;background:#eeebe4;border-bottom:3px solid #111;display:flex;align-items:stretch;height:60px}
+.d2-nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:19px;letter-spacing:-1px;padding:0 28px;display:flex;align-items:center;border-right:2px solid #111}
+.d2-nav-logo span{color:#e53935}
+.d2-nav-links{display:flex;flex:1}
+.d2-nav-links a{text-decoration:none;color:#111;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:0 20px;display:flex;align-items:center;border-right:1px solid rgba(0,0,0,.1);opacity:.48;transition:.2s}
+.d2-nav-links a:hover{opacity:1}
+.d2-ncta{background:#111;color:#eeebe4;font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border:none;padding:0 28px;cursor:none;transition:.3s}
+.d2-ncta:hover{background:#e53935}
+.d2-hero{display:grid;grid-template-columns:1fr 1fr;height:calc(100vh - 110px);border-bottom:3px solid #111}
+.d2-hero-left{border-right:3px solid #111;padding:52px 44px;display:flex;flex-direction:column;justify-content:space-between;background:#111;position:relative;overflow:hidden}
+.d2-hl-img{position:absolute;inset:0;opacity:.22;filter:grayscale(1)}
+.d2-hl-content{position:relative;z-index:2}
+.d2-hl-year{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:4px;color:rgba(255,255,255,.32);margin-bottom:32px}
+.d2-h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(46px,5.5vw,80px);line-height:.93;color:#fff;letter-spacing:-3px}
+.d2-h1 .red{color:#e53935}
+.d2-ticker{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;color:rgba(255,255,255,.28);border-top:1px solid rgba(255,255,255,.1);padding-top:20px;text-transform:uppercase;position:relative;z-index:2}
+.d2-hero-right{display:flex;flex-direction:column}
+.d2-hr-top{flex:1;padding:44px;border-bottom:3px solid #111;display:flex;flex-direction:column;justify-content:flex-end}
+.d2-hero-desc{font-size:clamp(14px,1.3vw,16px);color:rgba(0,0,0,.58);line-height:1.8;max-width:390px}
+.d2-hbtns{display:flex;gap:0;margin-top:32px}
+.d2-hb1{padding:14px 32px;background:#111;color:#eeebe4;font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;border:none;cursor:none;transition:.3s}
+.d2-hb1:hover{background:#e53935}
+.d2-hb2{padding:14px 32px;background:transparent;color:#111;font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;border:3px solid #111;cursor:none;transition:.3s;margin-left:-3px}
+.d2-hb2:hover{background:#111;color:#eeebe4}
+.d2-stat-row{height:160px;display:grid;grid-template-columns:repeat(4,1fr)}
+.d2-sb{padding:24px 20px;border-right:3px solid #111;border-top:3px solid #111;display:flex;flex-direction:column;justify-content:center}
+.d2-sb:last-child{border-right:none}
+.d2-sb-num{font-family:'Syne',sans-serif;font-weight:800;font-size:28px;color:#111;line-height:1}
+.d2-sb-num span{color:#e53935}
+.d2-sb-label{font-size:9px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:rgba(0,0,0,.36);margin-top:6px}
+.d2-marquee{overflow:hidden;border-top:3px solid #111;border-bottom:3px solid #111;background:#e53935}
+.d2-mtrack{display:flex;animation:mq 13s linear infinite;width:max-content}
+.d2-mi{font-family:'Syne',sans-serif;font-weight:800;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:#fff;padding:11px 32px;white-space:nowrap;border-right:1px solid rgba(255,255,255,.18)}
+.d2-products{display:grid;grid-template-columns:repeat(4,1fr);border-top:3px solid #111}
+.d2-pc{border-right:3px solid #111;overflow:hidden;cursor:none}
+.d2-pc:last-child{border-right:none}
+.d2-pc-img{height:280px;overflow:hidden;border-bottom:3px solid #111;position:relative}
+.d2-pc-img-bg{position:absolute;inset:0;filter:grayscale(.6);transition:.6s}
+.d2-pc:hover .d2-pc-img-bg{transform:scale(1.07);filter:grayscale(0)}
+.d2-pc-body{padding:26px 22px}
+.d2-pc-code{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:3px;color:#e53935;margin-bottom:9px}
+.d2-pc-title{font-family:'Syne',sans-serif;font-weight:800;font-size:16px;color:#111;line-height:1.2}
+.d2-pc-desc{font-size:12px;color:rgba(0,0,0,.46);margin-top:9px;line-height:1.7}
+.d2-pc-cta{display:inline-block;margin-top:16px;font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#111;text-decoration:none;border-bottom:2px solid #111;padding-bottom:2px;transition:.2s}
+.d2-pc-cta:hover{color:#e53935;border-color:#e53935}
+.d2-feature{display:grid;grid-template-columns:1fr 1fr;border-top:3px solid #111;min-height:500px}
+.d2-fi{overflow:hidden;border-right:3px solid #111}
+.d2-fi-bg{width:100%;height:100%;filter:grayscale(.25);transition:.5s}
+.d2-fi:hover .d2-fi-bg{transform:scale(1.03)}
+.d2-fc{padding:60px 48px;display:flex;flex-direction:column;justify-content:center;background:#111}
+.d2-fc-tag{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:4px;color:#e53935;text-transform:uppercase;margin-bottom:22px}
+.d2-fc-h2{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(32px,3.6vw,52px);color:#fff;line-height:1.05;letter-spacing:-2px}
+.d2-fc-h2 em{font-style:normal;color:#e53935}
+.d2-fc-body{font-size:13px;color:rgba(255,255,255,.4);margin-top:16px;line-height:1.82}
+.d2-fc-list{margin-top:26px}
+.d2-fc-li{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.d2-fc-dot{width:5px;height:5px;background:#e53935;border-radius:50%;flex-shrink:0}
+.d2-fc-text{font-size:13px;color:rgba(255,255,255,.52)}
+.d2-ind{border-top:3px solid #111;padding:72px 56px;background:#eeebe4}
+.d2-ind-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:3px;margin-top:44px}
+.d2-ib{background:#111;padding:28px 16px;cursor:none;position:relative;overflow:hidden;transition:.3s;aspect-ratio:2/3;display:flex;flex-direction:column;justify-content:flex-end}
+.d2-ib:hover{background:#e53935}
+.d2-ib-bg{position:absolute;inset:0;opacity:.1;mix-blend-mode:multiply;transition:.4s}
+.d2-ib:hover .d2-ib-bg{opacity:.2}
+.d2-ib-num{font-family:'Space Mono',monospace;font-size:9px;color:rgba(255,255,255,.22);letter-spacing:3px;position:absolute;top:14px;left:14px}
+.d2-ib-name{font-family:'Syne',sans-serif;font-weight:800;font-size:13px;color:#fff;text-transform:uppercase;line-height:1.2;position:relative;z-index:1}
+.d2-footer{background:#111;border-top:3px solid #222;padding:60px 56px 26px}
+.d2-footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.07)}
+.d2-fbrand{font-family:'Syne',sans-serif;font-weight:800;font-size:24px;color:#fff;letter-spacing:-1px;margin-bottom:10px}
+.d2-fbrand span{color:#e53935}
+.d2-fdesc{font-size:13px;color:rgba(255,255,255,.26);line-height:1.8}
+.d2-fcol-h{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:3px;color:#e53935;text-transform:uppercase;margin-bottom:16px}
+.d2-flinks a{display:block;color:rgba(255,255,255,.3);text-decoration:none;font-size:12px;font-family:'Syne',sans-serif;margin-bottom:8px;transition:.2s}
+.d2-flinks a:hover{color:#fff}
+.d2-footer-bottom{display:flex;justify-content:space-between;padding-top:20px;font-family:'Space Mono',monospace;font-size:9px;color:rgba(255,255,255,.16)}
+
+/* ═══ D3 — THE GRID ═══ */
+.d3{background:#03060f;color:#fff;font-family:'Oxanium',sans-serif}
+.d3-nav{position:sticky;top:50px;z-index:100;background:rgba(3,6,15,.97);border-bottom:1px solid rgba(0,255,200,.09);display:flex;align-items:center;justify-content:space-between;padding:0 56px;height:64px}
+.d3-logo{font-family:'Oxanium',sans-serif;font-weight:800;font-size:18px;letter-spacing:3px;color:#fff}
+.d3-logo span{color:#00ffc8}
+.d3-nav-links{display:flex;gap:32px}
+.d3-nav-links a{text-decoration:none;color:rgba(255,255,255,.36);font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;transition:.2s}
+.d3-nav-links a:hover{color:#00ffc8}
+.d3-ncta{background:transparent;border:1px solid #00ffc8;color:#00ffc8;padding:9px 24px;font-family:'Oxanium',sans-serif;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;cursor:none;transition:.3s;clip-path:polygon(0 0,calc(100% - 9px) 0,100% 9px,100% 100%,0 100%)}
+.d3-ncta:hover{background:#00ffc8;color:#03060f}
+.d3-hero{position:relative;height:100vh;overflow:hidden;display:flex;align-items:center}
+.d3-hero-bg{position:absolute;inset:0;transform:scale(1.06)}
+.d3-hero-bg.img-machines{filter:brightness(.13) saturate(2) hue-rotate(170deg)}
+.d3-grid-overlay{position:absolute;inset:0;background-image:linear-gradient(rgba(0,255,200,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,200,.04) 1px,transparent 1px);background-size:42px 42px}
+.d3-glow{position:absolute;inset:0;background:radial-gradient(ellipse at 72% 50%,rgba(0,255,200,.1),transparent 52%),radial-gradient(ellipse at 25% 78%,rgba(0,120,255,.1),transparent 48%)}
+.d3-scan-line{position:absolute;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#00ffc8,transparent);animation:scan 4.5s ease-in-out infinite;opacity:.35;top:0}
+.d3-hero-content{position:relative;z-index:3;padding:0 76px}
+.d3-badge{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(0,255,200,.22);padding:7px 16px;margin-bottom:32px;clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,0 100%);animation:fu .8s ease .15s both}
+.d3-bdot{width:6px;height:6px;background:#00ffc8;border-radius:50%;box-shadow:0 0 8px #00ffc8}
+.d3-btext{font-size:10px;letter-spacing:4px;color:#00ffc8;text-transform:uppercase}
+.d3-h1{font-family:'Oxanium',sans-serif;font-weight:800;font-size:clamp(52px,8vw,114px);line-height:.9;letter-spacing:-2px;text-transform:uppercase;animation:fu .9s ease .3s both}
+.d3-h1 .glow{color:#00ffc8;animation:glow 2.5s ease-in-out infinite}
+.d3-h1 .dim{color:rgba(255,255,255,.1);-webkit-text-stroke:1px rgba(255,255,255,.08)}
+.d3-sub{font-size:13px;color:rgba(255,255,255,.36);margin-top:20px;letter-spacing:3px;text-transform:uppercase;max-width:460px;animation:fu .9s ease .45s both}
+.d3-btns{display:flex;gap:13px;margin-top:40px;animation:fu .9s ease .6s both}
+.d3-b1{padding:14px 36px;background:linear-gradient(135deg,#00ffc8,#0066ff);color:#000;font-family:'Oxanium',sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border:none;cursor:none;clip-path:polygon(0 0,calc(100% - 11px) 0,100% 11px,100% 100%,0 100%);transition:.3s}
+.d3-b1:hover{box-shadow:0 0 36px rgba(0,255,200,.45);transform:translateY(-3px)}
+.d3-b2{padding:14px 36px;background:transparent;color:#00ffc8;font-family:'Oxanium',sans-serif;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;border:1px solid rgba(0,255,200,.3);cursor:none;clip-path:polygon(0 0,calc(100% - 11px) 0,100% 11px,100% 100%,0 100%);transition:.3s}
+.d3-b2:hover{border-color:#00ffc8}
+.d3-hud{position:absolute;bottom:34px;right:72px;display:flex;gap:28px;z-index:3;animation:fu .9s ease .75s both}
+.d3-hud-item{text-align:right}
+.d3-hval{font-family:'Oxanium',sans-serif;font-size:24px;font-weight:800;color:#00ffc8;text-shadow:0 0 16px rgba(0,255,200,.4);line-height:1}
+.d3-hlab{font-size:9px;letter-spacing:3px;color:rgba(255,255,255,.26);text-transform:uppercase;margin-top:4px}
+.d3-machines{background:#040810;padding:72px 0}
+.d3-mhdr{padding:0 56px;margin-bottom:42px;display:flex;align-items:flex-end;justify-content:space-between}
+.d3-mh2{font-family:'Oxanium',sans-serif;font-weight:800;font-size:clamp(28px,4.2vw,52px);color:#fff;line-height:1;letter-spacing:-1px}
+.d3-mh2 span{color:#00ffc8}
+.d3-mnav{display:flex;gap:8px}
+.d3-mnav button{width:40px;height:40px;background:transparent;border:1px solid rgba(0,255,200,.18);color:#00ffc8;font-size:16px;cursor:none;transition:.3s;clip-path:polygon(0 0,calc(100% - 6px) 0,100% 6px,100% 100%,0 100%)}
+.d3-mnav button:hover{background:rgba(0,255,200,.08);border-color:#00ffc8}
+.d3-scroll{display:flex;gap:16px;padding:0 56px;overflow-x:auto;scrollbar-width:none;scroll-behavior:smooth;cursor:grab}
+.d3-scroll::-webkit-scrollbar{display:none}
+.d3-scroll:active{cursor:grabbing}
+.d3-mcard{min-width:300px;border:1px solid rgba(0,255,200,.07);overflow:hidden;flex-shrink:0;cursor:none;transition:.4s}
+.d3-mcard:hover{border-color:rgba(0,255,200,.32);box-shadow:0 0 32px rgba(0,255,200,.06)}
+.d3-mcard-img{height:360px;position:relative;overflow:hidden}
+.d3-mcard-img-bg{position:absolute;inset:0;filter:brightness(.52) saturate(.5);transition:.6s}
+.d3-mcard:hover .d3-mcard-img-bg{transform:scale(1.05);filter:brightness(.76) saturate(1)}
+.d3-mcard-hud{position:absolute;top:12px;left:12px;right:12px;display:flex;justify-content:space-between;z-index:2}
+.d3-mcard-id{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:3px;color:#00ffc8;background:rgba(0,255,200,.07);border:1px solid rgba(0,255,200,.18);padding:4px 8px}
+.d3-mcard-scan{width:28px;height:28px;border:1px solid rgba(0,255,200,.28);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.d3-mcard-scan svg{width:12px;height:12px;stroke:#00ffc8;fill:none}
+.d3-mcard-body{padding:22px;background:#060c18;border-top:1px solid rgba(0,255,200,.09)}
+.d3-mcard-name{font-family:'Oxanium',sans-serif;font-weight:700;font-size:14px;color:#fff}
+.d3-mcard-tag{font-size:10px;letter-spacing:2px;color:rgba(0,255,200,.52);text-transform:uppercase;margin-top:4px}
+.d3-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(0,255,200,.04);border-top:1px solid rgba(0,255,200,.07);border-bottom:1px solid rgba(0,255,200,.07)}
+.d3-sc{padding:44px 28px;background:#03060f;text-align:center}
+.d3-sv{font-family:'Oxanium',sans-serif;font-weight:800;font-size:50px;color:#00ffc8;text-shadow:0 0 24px rgba(0,255,200,.26);line-height:1}
+.d3-sl{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.26);margin-top:10px}
+.d3-ind{padding:72px 56px;background:#03060f}
+.d3-sec-tag{display:block;text-align:center;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:4px;color:#00ffc8;text-transform:uppercase;margin-bottom:10px}
+.d3-sec-h2{font-family:'Oxanium',sans-serif;font-weight:800;font-size:clamp(30px,4.2vw,56px);color:#fff;text-align:center;letter-spacing:-1px}
+.d3-sec-h2 span{color:#00ffc8}
+.d3-ind-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:48px}
+.d3-ic{position:relative;height:260px;overflow:hidden;cursor:none;border:1px solid rgba(0,255,200,.05);transition:.4s}
+.d3-ic:hover{border-color:rgba(0,255,200,.28)}
+.d3-ic-bg{position:absolute;inset:0;filter:brightness(.16) saturate(1.8) hue-rotate(155deg);transition:.5s}
+.d3-ic:hover .d3-ic-bg{filter:brightness(.3) saturate(2) hue-rotate(155deg);transform:scale(1.05)}
+.d3-ic-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(3,6,15,.95) 26%,transparent 65%);display:flex;flex-direction:column;justify-content:flex-end;padding:24px}
+.d3-ic-num{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:3px;color:#00ffc8;margin-bottom:6px}
+.d3-ic-name{font-family:'Oxanium',sans-serif;font-weight:700;font-size:16px;color:#fff}
+.d3-ic-tag{font-size:10px;letter-spacing:2px;color:rgba(0,255,200,.46);text-transform:uppercase;margin-top:4px}
+.d3-corner{position:absolute;top:12px;right:12px;width:16px;height:16px;border-top:1px solid rgba(0,255,200,.26);border-right:1px solid rgba(0,255,200,.26)}
+.d3-footer{background:#020509;border-top:1px solid rgba(0,255,200,.09);padding:60px 56px 26px}
+.d3-footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.05)}
+.d3-flogo{font-family:'Oxanium',sans-serif;font-weight:800;font-size:20px;color:#fff;letter-spacing:3px;margin-bottom:10px}
+.d3-flogo span{color:#00ffc8}
+.d3-fdesc{font-size:13px;color:rgba(255,255,255,.26);line-height:1.8}
+.d3-fcol-h{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#00ffc8;margin-bottom:16px;font-family:'Space Mono',monospace}
+.d3-flinks a{display:block;color:rgba(255,255,255,.26);text-decoration:none;font-size:12px;margin-bottom:8px;font-family:'Oxanium',sans-serif;transition:.2s}
+.d3-flinks a:hover{color:#00ffc8}
+.d3-footer-bottom{display:flex;justify-content:space-between;padding-top:20px;font-family:'Space Mono',monospace;font-size:9px;color:rgba(255,255,255,.15)}
+
+/* ═══ D4 — THE CRAFT ═══ */
+.d4{background:#faf7f2;color:#1a1209;font-family:'DM Sans',sans-serif}
+.d4-nav{position:sticky;top:50px;z-index:100;background:#faf7f2;display:flex;align-items:center;justify-content:space-between;padding:0 72px;height:68px;border-bottom:1px solid rgba(26,18,9,.1)}
+.d4-logo{font-family:'Fraunces',serif;font-size:20px;font-weight:700;color:#1a1209;letter-spacing:.5px;font-style:italic}
+.d4-logo span{color:#8b6914;font-style:normal}
+.d4-nav-links{display:flex;gap:38px}
+.d4-nav-links a{text-decoration:none;color:rgba(26,18,9,.46);font-size:13px;transition:.2s}
+.d4-nav-links a:hover{color:#8b6914}
+.d4-ncta{background:#1a1209;color:#faf7f2;padding:10px 24px;font-size:12px;font-weight:500;letter-spacing:1px;border:none;cursor:none;transition:.3s}
+.d4-ncta:hover{background:#8b6914}
+.d4-hero{display:grid;grid-template-columns:55% 45%;height:calc(100vh - 118px);overflow:hidden}
+.d4-hero-img-wrap{position:relative;overflow:hidden}
+.d4-hero-img-bg{position:absolute;inset:0;filter:sepia(.12) brightness(.85);transition:.8s}
+.d4-hero-img-wrap:hover .d4-hero-img-bg{transform:scale(1.03)}
+.d4-hero-img-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,18,9,.28),transparent 55%)}
+.d4-hero-badge{position:absolute;bottom:34px;left:34px;background:rgba(250,247,242,.94);backdrop-filter:blur(12px);padding:16px 24px}
+.d4-badge-year{font-family:'Fraunces',serif;font-size:36px;font-weight:700;color:#1a1209;line-height:1}
+.d4-badge-label{font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:rgba(26,18,9,.44);margin-top:4px}
+.d4-hero-right{background:#1a1209;display:flex;flex-direction:column;justify-content:center;padding:72px 56px;position:relative;overflow:hidden}
+.d4-hr-pattern{position:absolute;inset:0;background-image:radial-gradient(rgba(139,105,20,.06) 1px,transparent 1px);background-size:24px 24px}
+.d4-hr-tag{font-size:10px;font-weight:500;letter-spacing:5px;text-transform:uppercase;color:rgba(250,247,242,.36);margin-bottom:28px;position:relative;z-index:1}
+.d4-hr-h1{font-family:'Fraunces',serif;font-size:clamp(38px,4.6vw,64px);font-weight:700;color:#faf7f2;line-height:1.06;position:relative;z-index:1;animation:fu .9s ease .2s both}
+.d4-hr-h1 em{font-style:italic;color:#8b6914}
+.d4-hr-desc{font-size:15px;color:rgba(250,247,242,.44);margin-top:20px;line-height:1.82;font-weight:300;position:relative;z-index:1;animation:fu .9s ease .38s both}
+.d4-hr-btns{display:flex;gap:13px;margin-top:36px;position:relative;z-index:1;animation:fu .9s ease .54s both}
+.d4-b1{padding:13px 36px;background:#8b6914;color:#faf7f2;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;border:none;cursor:none;transition:.3s}
+.d4-b1:hover{background:#a07c1a}
+.d4-b2{padding:13px 36px;background:transparent;color:#faf7f2;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;border:1px solid rgba(250,247,242,.2);cursor:none;transition:.3s}
+.d4-b2:hover{border-color:#8b6914;color:#8b6914}
+.d4-hr-stats{display:flex;gap:34px;margin-top:46px;padding-top:34px;border-top:1px solid rgba(250,247,242,.07);position:relative;z-index:1;animation:fu .9s ease .7s both}
+.d4-hs-n{font-family:'Fraunces',serif;font-size:28px;font-weight:700;color:#8b6914;line-height:1}
+.d4-hs-l{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(250,247,242,.3);margin-top:4px}
+.d4-heritage{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(26,18,9,.08)}
+.d4-hl{padding:72px;background:#faf7f2;display:flex;flex-direction:column;justify-content:center}
+.d4-hl-tag{font-size:10px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:rgba(26,18,9,.36);margin-bottom:20px}
+.d4-hl-h2{font-family:'Fraunces',serif;font-size:clamp(32px,3.6vw,50px);font-weight:700;color:#1a1209;line-height:1.1}
+.d4-hl-h2 em{font-style:italic;color:#8b6914}
+.d4-hl-body{font-size:15px;color:rgba(26,18,9,.5);margin-top:20px;line-height:1.85}
+.d4-tl{margin-top:36px}
+.d4-tl-item{display:flex;gap:20px;padding:14px 0;border-bottom:1px solid rgba(26,18,9,.07);cursor:none;transition:.3s}
+.d4-tl-item:hover{padding-left:8px}
+.d4-tl-year{font-family:'Fraunces',serif;font-size:20px;font-weight:700;color:#8b6914;min-width:60px}
+.d4-tl-text strong{display:block;font-size:14px;font-weight:600;color:#1a1209}
+.d4-tl-text p{font-size:12px;color:rgba(26,18,9,.46);margin-top:4px;line-height:1.6}
+.d4-hr{position:relative;overflow:hidden;background:#1a1209}
+.d4-hr-img-bg{position:absolute;inset:0;opacity:.64;mix-blend-mode:luminosity;transition:.5s}
+.d4-hr:hover .d4-hr-img-bg{transform:scale(1.03);opacity:.84}
+.d4-hr-quote{position:absolute;bottom:40px;right:40px;left:40px;background:rgba(250,247,242,.07);backdrop-filter:blur(12px);border-left:3px solid #8b6914;padding:20px 24px}
+.d4-hr-quote p{font-family:'Fraunces',serif;font-size:15px;font-style:italic;color:rgba(250,247,242,.76);line-height:1.6}
+.d4-products{padding:84px 72px;background:#f3efe8}
+.d4-prod-tag{display:block;font-size:10px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:#8b6914;text-align:center;margin-bottom:10px}
+.d4-prod-h2{font-family:'Fraunces',serif;font-size:clamp(32px,3.8vw,50px);font-weight:700;color:#1a1209;text-align:center;letter-spacing:-1px}
+.d4-prod-h2 em{font-style:italic;color:#8b6914}
+.d4-prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:50px}
+.d4-prod-card{background:#faf7f2;overflow:hidden;cursor:none;transition:.4s}
+.d4-prod-card:hover{transform:translateY(-7px);box-shadow:0 26px 52px rgba(26,18,9,.1)}
+.d4-prod-card-img{height:230px;overflow:hidden;position:relative}
+.d4-prod-card-img-bg{position:absolute;inset:0;filter:sepia(.1);transition:.6s}
+.d4-prod-card:hover .d4-prod-card-img-bg{transform:scale(1.08)}
+.d4-prod-card-body{padding:24px 20px}
+.d4-pc-num{font-size:10px;font-weight:600;letter-spacing:3px;color:#8b6914;margin-bottom:9px}
+.d4-pc-title{font-family:'Fraunces',serif;font-size:18px;font-weight:700;color:#1a1209;line-height:1.2}
+.d4-pc-desc{font-size:12px;color:rgba(26,18,9,.46);margin-top:8px;line-height:1.7}
+.d4-pc-link{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#8b6914;text-decoration:none}
+.d4-ind-section{padding:76px;background:#1a1209;overflow:hidden}
+.d4-ind-tag{display:block;font-size:10px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:#8b6914;text-align:center;margin-bottom:10px}
+.d4-ind-h2{font-family:'Fraunces',serif;font-size:clamp(30px,3.8vw,48px);font-weight:700;color:#faf7f2;text-align:center;letter-spacing:-1px}
+.d4-ind-h2 em{font-style:italic;color:#8b6914}
+.d4-ind-scroll{display:flex;gap:16px;overflow-x:auto;margin-top:42px;scrollbar-width:none;padding-bottom:4px;cursor:grab}
+.d4-ind-scroll::-webkit-scrollbar{display:none}
+.d4-ind-scroll:active{cursor:grabbing}
+.d4-ind-tile{min-width:256px;height:320px;position:relative;overflow:hidden;flex-shrink:0;cursor:none}
+.d4-ind-tile-bg{position:absolute;inset:0;filter:sepia(.38) brightness(.5);transition:.6s}
+.d4-ind-tile:hover .d4-ind-tile-bg{transform:scale(1.08);filter:sepia(.15) brightness(.64)}
+.d4-ind-tile-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,18,9,.9) 26%,transparent 66%);display:flex;flex-direction:column;justify-content:flex-end;padding:24px}
+.d4-ind-name{font-family:'Fraunces',serif;font-size:18px;font-weight:700;color:#faf7f2}
+.d4-ind-tag-text{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#8b6914;margin-top:5px}
+.d4-footer{background:#0f0b05;padding:60px 72px 26px;border-top:1px solid rgba(250,247,242,.05)}
+.d4-footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:42px;border-bottom:1px solid rgba(250,247,242,.05)}
+.d4-fbrand{font-family:'Fraunces',serif;font-size:22px;font-weight:700;font-style:italic;color:#faf7f2;margin-bottom:10px}
+.d4-fdesc{font-size:13px;color:rgba(250,247,242,.26);line-height:1.8}
+.d4-fcol-h{font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#8b6914;margin-bottom:16px}
+.d4-flinks a{display:block;color:rgba(250,247,242,.26);text-decoration:none;font-size:12px;margin-bottom:8px;transition:.2s}
+.d4-flinks a:hover{color:#faf7f2}
+.d4-footer-bottom{display:flex;justify-content:space-between;padding-top:20px;font-size:11px;color:rgba(250,247,242,.18)}
+
+/* ═══ D5 — THE SIGNAL ═══ */
+.d5{background:#fff;color:#0a1628;font-family:'Syne',sans-serif}
+.d5-nav{position:sticky;top:50px;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(10,22,40,.07);display:flex;align-items:center;justify-content:space-between;padding:0 60px;height:64px}
+.d5-logo{font-family:'Oxanium',sans-serif;font-weight:800;font-size:17px;letter-spacing:2px;color:#0a1628}
+.d5-logo span{color:#2563eb}
+.d5-nav-links{display:flex;gap:32px}
+.d5-nav-links a{text-decoration:none;color:rgba(10,22,40,.46);font-size:12px;font-weight:500;transition:.2s}
+.d5-nav-links a:hover{color:#2563eb}
+.d5-nav-acts{display:flex;gap:10px;align-items:center}
+.d5-nb1{background:transparent;border:1px solid rgba(10,22,40,.13);color:#0a1628;padding:9px 18px;font-family:'Syne',sans-serif;font-size:12px;font-weight:600;cursor:none;transition:.3s;border-radius:6px}
+.d5-nb1:hover{border-color:#2563eb;color:#2563eb}
+.d5-nb2{background:#2563eb;color:#fff;padding:9px 22px;font-family:'Syne',sans-serif;font-size:12px;font-weight:700;border:none;cursor:none;transition:.3s;border-radius:6px}
+.d5-nb2:hover{background:#1d4ed8;box-shadow:0 8px 20px rgba(37,99,235,.3)}
+.d5-hero{min-height:calc(100vh - 114px);background:linear-gradient(135deg,#eef2ff 0%,#fff 50%,#f8faff 100%);position:relative;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:72px 60px;gap:56px}
+.d5-hero-mesh{position:absolute;inset:0;background:radial-gradient(ellipse at 78% 32%,rgba(37,99,235,.07),transparent 52%),radial-gradient(ellipse at 18% 78%,rgba(99,102,241,.05),transparent 48%)}
+.d5-hero-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(37,99,235,.07) 1px,transparent 1px);background-size:30px 30px}
+.d5-hero-left{position:relative;z-index:2}
+.d5-chip{display:inline-flex;align-items:center;gap:8px;background:rgba(37,99,235,.06);border:1px solid rgba(37,99,235,.14);border-radius:100px;padding:6px 15px;margin-bottom:26px;animation:fu .8s ease .15s both}
+.d5-chip-pulse{width:6px;height:6px;background:#22c55e;border-radius:50%;box-shadow:0 0 0 3px rgba(34,197,94,.2)}
+.d5-chip-text{font-family:'Syne',sans-serif;font-size:11px;font-weight:600;letter-spacing:1px;color:#2563eb}
+.d5-h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(36px,4.5vw,62px);line-height:1.05;color:#0a1628;letter-spacing:-2px;animation:fu .9s ease .3s both}
+.d5-h1 span{background:linear-gradient(135deg,#2563eb,#7c3aed);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.d5-sub{font-size:15px;color:rgba(10,22,40,.46);margin-top:16px;line-height:1.78;font-family:'DM Sans',sans-serif;max-width:410px;animation:fu .9s ease .45s both}
+.d5-btns{display:flex;gap:10px;margin-top:32px;flex-wrap:wrap;animation:fu .9s ease .6s both}
+.d5-b1{padding:12px 32px;background:#2563eb;color:#fff;font-family:'Syne',sans-serif;font-size:13px;font-weight:700;border:none;cursor:none;transition:.3s;border-radius:8px}
+.d5-b1:hover{background:#1d4ed8;box-shadow:0 10px 26px rgba(37,99,235,.3);transform:translateY(-2px)}
+.d5-b2{padding:12px 32px;background:#fff;color:#0a1628;font-family:'Syne',sans-serif;font-size:13px;font-weight:700;border:2px solid rgba(10,22,40,.11);cursor:none;transition:.3s;border-radius:8px;display:flex;align-items:center;gap:7px}
+.d5-b2:hover{border-color:#2563eb;color:#2563eb}
+.d5-trust{display:flex;align-items:center;gap:14px;margin-top:32px;animation:fu .9s ease .75s both}
+.d5-avatars{display:flex}
+.d5-av{width:28px;height:28px;border-radius:50%;border:2px solid #fff;background:linear-gradient(135deg,#2563eb,#7c3aed);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#fff;margin-left:-6px}
+.d5-av:first-child{margin-left:0}
+.d5-trust-text{font-family:'DM Sans',sans-serif;font-size:12px;color:rgba(10,22,40,.46)}
+.d5-trust-text strong{color:#0a1628}
+.d5-hero-right{position:relative;z-index:2}
+.d5-main-img{width:100%;border-radius:18px;box-shadow:0 32px 64px rgba(10,22,40,.13);overflow:hidden;aspect-ratio:4/3;position:relative}
+.d5-main-img-bg{position:absolute;inset:0}
+.d5-fc{position:absolute;background:#fff;border-radius:13px;padding:14px 18px;box-shadow:0 14px 44px rgba(10,22,40,.1);display:flex;align-items:center;gap:11px;animation:fl 4s ease-in-out infinite}
+.d5-fc.c1{bottom:-18px;left:-26px;animation-delay:0s}
+.d5-fc.c2{top:-14px;right:-18px;animation-delay:1.6s}
+.d5-fc.c3{top:42%;right:-42px;animation-delay:.9s}
+.d5-fc-icon{width:36px;height:36px;border-radius:9px;background:linear-gradient(135deg,#2563eb,#7c3aed);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.d5-fc-icon svg{width:15px;height:15px;stroke:#fff;fill:none;stroke-width:1.5}
+.d5-fc-val{font-family:'Syne',sans-serif;font-size:16px;font-weight:800;color:#0a1628;line-height:1}
+.d5-fc-label{font-family:'DM Sans',sans-serif;font-size:10px;color:rgba(10,22,40,.46);margin-top:2px}
+.d5-logos-bar{padding:40px 60px;background:#f8faff;border-top:1px solid rgba(10,22,40,.05);display:flex;align-items:center;gap:16px;overflow:hidden}
+.d5-logos-label{font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;color:rgba(10,22,40,.3);letter-spacing:1px;white-space:nowrap;min-width:120px}
+.d5-logos-track{display:flex;overflow:hidden;flex:1}
+.d5-logos-inner{display:flex;gap:48px;animation:mq 20s linear infinite;width:max-content}
+.d5-logo-item{font-family:'Syne',sans-serif;font-weight:800;font-size:12px;color:rgba(10,22,40,.18);letter-spacing:2px;white-space:nowrap;text-transform:uppercase}
+.d5-products{padding:84px 60px;background:#fff}
+.d5-prod-tag{display:block;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#2563eb;text-align:center;margin-bottom:9px}
+.d5-prod-h2{font-family:'Syne',sans-serif;font-size:clamp(30px,3.8vw,50px);font-weight:800;color:#0a1628;text-align:center;letter-spacing:-2px}
+.d5-prod-h2 span{background:linear-gradient(135deg,#2563eb,#7c3aed);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.d5-prod-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:50px}
+.d5-prod-card{border:1px solid rgba(10,22,40,.08);border-radius:16px;overflow:hidden;cursor:none;transition:.4s}
+.d5-prod-card:hover{border-color:rgba(37,99,235,.2);box-shadow:0 20px 50px rgba(10,22,40,.08);transform:translateY(-4px)}
+.d5-prod-card-img{height:240px;overflow:hidden;position:relative}
+.d5-prod-card-img-bg{position:absolute;inset:0;transition:.6s}
+.d5-prod-card:hover .d5-prod-card-img-bg{transform:scale(1.05)}
+.d5-prod-card-body{padding:28px}
+.d5-prod-badge{display:inline-block;background:rgba(37,99,235,.08);color:#2563eb;font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;border-radius:100px;margin-bottom:10px}
+.d5-prod-title{font-family:'Syne',sans-serif;font-weight:800;font-size:20px;color:#0a1628;letter-spacing:-1px}
+.d5-prod-desc{font-family:'DM Sans',sans-serif;font-size:13px;color:rgba(10,22,40,.46);margin-top:8px;line-height:1.75}
+.d5-prod-link{display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-family:'Syne',sans-serif;font-size:12px;font-weight:700;color:#2563eb;text-decoration:none;transition:.2s}
+.d5-prod-link:hover{gap:12px}
+.d5-process{padding:84px 60px;background:linear-gradient(135deg,#0a1628,#1e3a5f)}
+.d5-proc-tag{display:block;font-size:10px;font-weight:700;letter-spacing:3px;color:rgba(96,165,250,.52);text-transform:uppercase;text-align:center;margin-bottom:9px}
+.d5-proc-h2{font-family:'Syne',sans-serif;font-size:clamp(28px,3.8vw,48px);font-weight:800;color:#fff;text-align:center;letter-spacing:-2px}
+.d5-proc-h2 span{color:#60a5fa}
+.d5-proc-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;margin-top:50px;background:rgba(255,255,255,.06)}
+.d5-ps{background:transparent;padding:36px 22px;text-align:center;transition:.3s;cursor:none;position:relative;overflow:hidden}
+.d5-ps::before{content:'';position:absolute;inset:0;background:rgba(37,99,235,.13);opacity:0;transition:.3s}
+.d5-ps:hover::before{opacity:1}
+.d5-ps-num{font-family:'Syne',sans-serif;font-weight:800;font-size:10px;letter-spacing:3px;color:rgba(96,165,250,.48);margin-bottom:12px;position:relative}
+.d5-ps-icon{width:48px;height:48px;border-radius:11px;background:rgba(37,99,235,.13);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;transition:.3s;position:relative}
+.d5-ps:hover .d5-ps-icon{background:rgba(37,99,235,.3)}
+.d5-ps-icon svg{width:20px;height:20px;stroke:#60a5fa;fill:none;stroke-width:1.5}
+.d5-ps-title{font-family:'Syne',sans-serif;font-weight:700;font-size:13px;color:#fff;position:relative}
+.d5-ps-desc{font-family:'DM Sans',sans-serif;font-size:11px;color:rgba(255,255,255,.36);margin-top:6px;line-height:1.6;position:relative}
+.d5-ind{padding:84px 60px;background:#eef2ff}
+.d5-ind-tag{display:block;font-size:10px;font-weight:700;letter-spacing:3px;color:#2563eb;text-transform:uppercase;text-align:center;margin-bottom:9px}
+.d5-ind-h2{font-family:'Syne',sans-serif;font-size:clamp(28px,3.8vw,48px);font-weight:800;color:#0a1628;text-align:center;letter-spacing:-2px}
+.d5-ind-h2 span{background:linear-gradient(135deg,#2563eb,#7c3aed);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.d5-ind-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:50px}
+.d5-ind-card{background:#fff;border-radius:14px;overflow:hidden;cursor:none;transition:.4s;border:1px solid rgba(10,22,40,.06)}
+.d5-ind-card:hover{transform:translateY(-5px);box-shadow:0 18px 48px rgba(10,22,40,.09);border-color:rgba(37,99,235,.17)}
+.d5-ind-card-img{height:180px;overflow:hidden;position:relative}
+.d5-ind-card-img-bg{position:absolute;inset:0;filter:brightness(.86);transition:.5s}
+.d5-ind-card:hover .d5-ind-card-img-bg{transform:scale(1.06);filter:brightness(1)}
+.d5-ind-card-body{padding:20px}
+.d5-ind-dot{display:inline-block;width:7px;height:7px;background:#22c55e;border-radius:50%;margin-right:6px}
+.d5-ind-name{font-family:'Syne',sans-serif;font-weight:800;font-size:14px;color:#0a1628;display:inline}
+.d5-ind-sub{font-family:'DM Sans',sans-serif;font-size:11px;color:#2563eb;margin-top:4px;letter-spacing:.5px}
+.d5-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#1e3a5f}
+.d5-sb{background:#0a1628;padding:44px 30px;text-align:center;position:relative;overflow:hidden}
+.d5-sb::before{content:'';position:absolute;top:0;left:50%;right:50%;height:2px;background:linear-gradient(90deg,#2563eb,#7c3aed);transition:.4s}
+.d5-sb:hover::before{left:0;right:0}
+.d5-sb-val{font-family:'Syne',sans-serif;font-weight:800;font-size:48px;background:linear-gradient(135deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1}
+.d5-sb-label{font-family:'DM Sans',sans-serif;font-size:11px;color:rgba(255,255,255,.36);margin-top:9px}
+.d5-cta{padding:100px 60px;text-align:center;background:#fff;position:relative;overflow:hidden}
+.d5-cta-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,rgba(37,99,235,.05),transparent 56%)}
+.d5-cta-h2{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(32px,4.8vw,60px);color:#0a1628;letter-spacing:-2px;position:relative}
+.d5-cta-h2 span{background:linear-gradient(135deg,#2563eb,#7c3aed);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.d5-cta-p{font-family:'DM Sans',sans-serif;font-size:15px;color:rgba(10,22,40,.46);margin-top:12px;position:relative}
+.d5-cta-btns{display:flex;gap:12px;justify-content:center;margin-top:32px;position:relative}
+.d5-footer{background:#0a1628;padding:60px 60px 26px}
+.d5-footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.07)}
+.d5-flogo{font-family:'Oxanium',sans-serif;font-weight:800;font-size:20px;color:#fff;letter-spacing:2px;margin-bottom:10px}
+.d5-flogo span{color:#2563eb}
+.d5-fdesc{font-family:'DM Sans',sans-serif;font-size:13px;color:rgba(255,255,255,.26);line-height:1.8}
+.d5-fcol-h{font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.36);margin-bottom:16px}
+.d5-flinks a{display:block;color:rgba(255,255,255,.26);text-decoration:none;font-family:'DM Sans',sans-serif;font-size:12px;margin-bottom:8px;transition:.2s}
+.d5-flinks a:hover{color:#60a5fa}
+.d5-footer-bottom{display:flex;justify-content:space-between;padding-top:20px;font-family:'DM Sans',sans-serif;font-size:11px;color:rgba(255,255,255,.18)}
+
+/* ═══ RESPONSIVE ═══ */
+@media(max-width:900px){
+  .d1-hero-content{padding:0 28px}.d2-hero,.d4-hero,.d5-hero{grid-template-columns:1fr}
+  .d1-prod-row,.d4-heritage,.d2-feature{grid-template-columns:1fr}
+  .d2-products,.d4-prod-grid,.d5-prod-grid{grid-template-columns:1fr 1fr}
+  .d3-stats,.d5-stats{grid-template-columns:1fr 1fr}
+  .d2-ind-grid{grid-template-columns:repeat(3,1fr)}
+  .d1-statsbar{grid-template-columns:1fr 1fr}.d5-proc-steps{grid-template-columns:1fr 1fr}
+  .d1-footer-grid,.d2-footer-top,.d3-footer-top,.d4-footer-top,.d5-footer-top{grid-template-columns:1fr 1fr}
+  .d4-hr,.d3-hud{display:none}.d5-fc.c3{display:none}
+  .d1-ind-grid,.d3-ind-grid,.d5-ind-grid{grid-template-columns:1fr 1fr}
+  .d5-hero{padding:50px 26px}.d3-hero-content{padding:0 28px}
+}
+</style>
+</head>
+<body>
+<div id="cur"></div>
+<div id="trail"></div>
+
+<div class="tabs">
+  <button class="tab on" onclick="switchTab(0)" style="--tc:linear-gradient(90deg,#f0b429,#ff6b00)">01 · THE FORGE</button>
+  <button class="tab" onclick="switchTab(1)" style="--tc:#e53935">02 · THE BLUEPRINT</button>
+  <button class="tab" onclick="switchTab(2)" style="--tc:#00ffc8">03 · THE GRID</button>
+  <button class="tab" onclick="switchTab(3)" style="--tc:#8b6914">04 · THE CRAFT</button>
+  <button class="tab" onclick="switchTab(4)" style="--tc:#2563eb">05 · THE SIGNAL</button>
+</div>
+
+<!-- ════ PAGE 1 — THE FORGE ════ -->
+<div class="page d1 on" id="p0">
+  <nav class="d1-nav">
+    <div class="d1-logo">NLI MACHINES</div>
+    <div class="d1-nav-links"><a href="#">Products</a><a href="#">Industries</a><a href="#">Heritage</a><a href="#">Contact</a></div>
+    <button class="d1-cta-btn">Request Quote</button>
+  </nav>
+  <section class="d1-hero">
+    <div class="d1-hero-bg img-factory"></div>
+    <div class="d1-scanlines"></div>
+    <div class="d1-fire"></div>
+    <div class="d1-hero-content">
+      <div class="d1-eyebrow"><div class="d1-eyebrow-bar"></div><span class="d1-eyebrow-text">Newlong Industrial Co. · Est. 1941</span></div>
+      <h1 class="d1-h1"><span class="out">PRECISION</span><br><span class="fire">FORGED</span><br><span>IN STEEL</span></h1>
+      <p class="d1-sub">Eight decades of Japanese engineering excellence. Industrial packaging machinery that powers the world's most demanding production lines.</p>
+      <div class="d1-btns"><button class="d1-btn1">Explore Machines</button><button class="d1-btn2">Request Consultation</button></div>
+    </div>
+    <div class="d1-statsbar">
+      <div class="d1-stat"><div class="d1-stat-n">80+</div><div class="d1-stat-l">Years Legacy</div></div>
+      <div class="d1-stat"><div class="d1-stat-n">1K+</div><div class="d1-stat-l">Machines Deployed</div></div>
+      <div class="d1-stat"><div class="d1-stat-n">50+</div><div class="d1-stat-l">Countries Served</div></div>
+      <div class="d1-stat"><div class="d1-stat-n">ISO</div><div class="d1-stat-l">Certified Quality</div></div>
+    </div>
+  </section>
+  <div class="d1-marquee"><div class="d1-mtrack"><span class="d1-mi">Industrial Sewing Machines</span><span class="d1-mi">·</span><span class="d1-mi">Bag Making Machines</span><span class="d1-mi">·</span><span class="d1-mi">Automatic Bagging Systems</span><span class="d1-mi">·</span><span class="d1-mi">Flexographic Printing</span><span class="d1-mi">·</span><span class="d1-mi">Japanese Engineering Since 1941</span><span class="d1-mi">·</span><span class="d1-mi">Industrial Sewing Machines</span><span class="d1-mi">·</span><span class="d1-mi">Bag Making Machines</span><span class="d1-mi">·</span><span class="d1-mi">Automatic Bagging Systems</span><span class="d1-mi">·</span><span class="d1-mi">Flexographic Printing</span><span class="d1-mi">·</span></div></div>
+  <div class="d1-products">
+    <div class="d1-prod-row anim"><div class="d1-prod-img"><div class="d1-prod-img-bg img-sewing"></div><div class="d1-prod-num">01</div></div><div class="d1-prod-txt"><div class="d1-prod-tag">// Product Line 01</div><div class="d1-prod-title">Industrial Sewing<br>Machines</div><p class="d1-prod-desc">Heavy-duty bag closing systems for cement, fertilizer, chemicals and food packaging. Built for 24/7 production with minimal maintenance requirements.</p><a class="d1-prod-link" href="#"><div class="d1-link-bar"></div>Explore Series</a></div></div>
+    <div class="d1-prod-row anim"><div class="d1-prod-img"><div class="d1-prod-img-bg img-bags"></div><div class="d1-prod-num">02</div></div><div class="d1-prod-txt"><div class="d1-prod-tag">// Product Line 02</div><div class="d1-prod-title">Bag Making<br>Machines</div><p class="d1-prod-desc">Precision woven PP, paper, and multiwall bag manufacturing at high industrial throughput with accurate cutting and sealing every cycle.</p><a class="d1-prod-link" href="#"><div class="d1-link-bar"></div>Explore Series</a></div></div>
+    <div class="d1-prod-row anim"><div class="d1-prod-img"><div class="d1-prod-img-bg img-bagging"></div><div class="d1-prod-num">03</div></div><div class="d1-prod-txt"><div class="d1-prod-tag">// Product Line 03</div><div class="d1-prod-title">Automatic<br>Bagging Systems</div><p class="d1-prod-desc">End-to-end PLC-controlled fill-and-seal automation for powders, granules, and bulk materials with full Industry 4.0 connectivity.</p><a class="d1-prod-link" href="#"><div class="d1-link-bar"></div>Explore Series</a></div></div>
+    <div class="d1-prod-row anim"><div class="d1-prod-img"><div class="d1-prod-img-bg img-printing"></div><div class="d1-prod-num">04</div></div><div class="d1-prod-txt"><div class="d1-prod-tag">// Product Line 04</div><div class="d1-prod-title">Flexographic<br>Printing Machines</div><p class="d1-prod-desc">Multi-colour HD flexographic printing for all industrial substrates. Precision registration and consistent ink delivery on every production run.</p><a class="d1-prod-link" href="#"><div class="d1-link-bar"></div>Explore Series</a></div></div>
+  </div>
+  <section class="d1-ind">
+    <span class="d1-sec-tag">// Industries We Power</span>
+    <h2 class="d1-sec-h2">Industry Applications</h2>
+    <div class="d1-ind-grid">
+      <div class="d1-ind-tile anim"><div class="d1-ind-tile-bg img-food"></div><div class="d1-ind-overlay"><div class="d1-ind-num">01</div><div class="d1-ind-name">Food Processing</div><div class="d1-ind-sub">Hygiene Grade</div></div><div class="d1-ind-border"></div></div>
+      <div class="d1-ind-tile anim"><div class="d1-ind-tile-bg img-chemical"></div><div class="d1-ind-overlay"><div class="d1-ind-num">02</div><div class="d1-ind-name">Chemicals</div><div class="d1-ind-sub">Industrial Grade</div></div><div class="d1-ind-border"></div></div>
+      <div class="d1-ind-tile anim"><div class="d1-ind-tile-bg img-cement"></div><div class="d1-ind-overlay"><div class="d1-ind-num">03</div><div class="d1-ind-name">Cement Industry</div><div class="d1-ind-sub">Heavy Duty Bulk</div></div><div class="d1-ind-border"></div></div>
+      <div class="d1-ind-tile anim"><div class="d1-ind-tile-bg img-agri"></div><div class="d1-ind-overlay"><div class="d1-ind-num">04</div><div class="d1-ind-name">Animal Feed</div><div class="d1-ind-sub">Precision Fill &amp; Seal</div></div><div class="d1-ind-border"></div></div>
+      <div class="d1-ind-tile anim"><div class="d1-ind-tile-bg img-mineral"></div><div class="d1-ind-overlay"><div class="d1-ind-num">05</div><div class="d1-ind-name">Fertilizers</div><div class="d1-ind-sub">Bulk Handling</div></div><div class="d1-ind-border"></div></div>
+      <div class="d1-ind-tile anim"><div class="d1-ind-tile-bg img-pharma"></div><div class="d1-ind-overlay"><div class="d1-ind-num">06</div><div class="d1-ind-name">Clean Room</div><div class="d1-ind-sub">Pharma &amp; Semicon</div></div><div class="d1-ind-border"></div></div>
+    </div>
+  </section>
+  <section class="d1-cta-sec">
+    <div class="d1-cta-bg-el img-process"></div>
+    <div class="d1-cta-glow"></div>
+    <div class="d1-cta-content">
+      <h2 class="d1-cta-h2">Let's Build<br><span>Excellence</span><br>Together</h2>
+      <p class="d1-cta-p">Partner with eight decades of Japanese engineering heritage.</p>
+      <div style="display:flex;gap:16px;justify-content:center;margin-top:32px"><button class="d1-btn1">Request Consultation</button><button class="d1-btn2">View Catalogue</button></div>
+    </div>
+  </section>
+  <footer class="d1-footer">
+    <div class="d1-footer-grid">
+      <div><div class="d1-footer-logo">NLI MACHINES</div><p class="d1-footer-desc">Japanese precision engineering. Industrial packaging machinery since 1941.</p></div>
+      <div><div class="d1-fcol-h">Products</div><div class="d1-flinks"><a href="#">Industrial Sewing</a><a href="#">Bag Making</a><a href="#">Bagging Systems</a><a href="#">Flexo Printing</a></div></div>
+      <div><div class="d1-fcol-h">Industries</div><div class="d1-flinks"><a href="#">Food</a><a href="#">Chemicals</a><a href="#">Cement</a><a href="#">Agriculture</a></div></div>
+      <div><div class="d1-fcol-h">Company</div><div class="d1-flinks"><a href="#">About</a><a href="#">Heritage</a><a href="#">Certifications</a><a href="#">Contact</a></div></div>
+    </div>
+    <div class="d1-footer-bottom"><span>© 2024 NLI Packaging Machines Pvt. Ltd.</span><span>Est. 1941 · Precision. Performance. Packaging.</span></div>
+  </footer>
+</div>
+
+<!-- ════ PAGE 2 — THE BLUEPRINT ════ -->
+<div class="page d2" id="p1">
+  <nav class="d2-nav"><div class="d2-nav-logo">NLI<span>.</span></div><div class="d2-nav-links"><a href="#">Machines</a><a href="#">Industries</a><a href="#">Heritage</a><a href="#">Engineering</a><a href="#">Contact</a></div><button class="d2-ncta">Get Quote</button></nav>
+  <section class="d2-hero">
+    <div class="d2-hero-left">
+      <div class="d2-hl-img img-factory"></div>
+      <div class="d2-hl-content"><div class="d2-hl-year">// EST. 1941 · NEWLONG INDUSTRIAL CO. JAPAN</div><h1 class="d2-h1">PACKAGING<br>THAT<br><span class="red">WORKS</span><br>HARDER</h1></div>
+      <div class="d2-ticker">Industrial Packaging Machinery · Japanese Engineering · Global Standards</div>
+    </div>
+    <div class="d2-hero-right">
+      <div class="d2-hr-top"><p class="d2-hero-desc">NLI delivers precision-engineered industrial packaging machinery for the world's most demanding operations. Built to last, built to perform.</p><div class="d2-hbtns"><button class="d2-hb1">Explore Machines</button><button class="d2-hb2">Our Heritage</button></div></div>
+      <div class="d2-stat-row"><div class="d2-sb"><div class="d2-sb-num">80<span>+</span></div><div class="d2-sb-label">Years</div></div><div class="d2-sb"><div class="d2-sb-num">1<span>K+</span></div><div class="d2-sb-label">Machines</div></div><div class="d2-sb"><div class="d2-sb-num">50<span>+</span></div><div class="d2-sb-label">Countries</div></div><div class="d2-sb"><div class="d2-sb-num">4</div><div class="d2-sb-label">Product Lines</div></div></div>
+    </div>
+  </section>
+  <div class="d2-marquee"><div class="d2-mtrack"><span class="d2-mi">Precision Engineering</span><span class="d2-mi">Japanese Quality</span><span class="d2-mi">Industrial Automation</span><span class="d2-mi">Global Manufacturing</span><span class="d2-mi">Since 1941</span><span class="d2-mi">Precision Engineering</span><span class="d2-mi">Japanese Quality</span><span class="d2-mi">Industrial Automation</span><span class="d2-mi">Global Manufacturing</span><span class="d2-mi">Since 1941</span></div></div>
+  <div class="d2-products">
+    <div class="d2-pc anim"><div class="d2-pc-img"><div class="d2-pc-img-bg img-sewing"></div></div><div class="d2-pc-body"><div class="d2-pc-code">01 / ISM</div><div class="d2-pc-title">Industrial Sewing Machines</div><div class="d2-pc-desc">High-speed bag closing for industrial-scale operations.</div><a class="d2-pc-cta" href="#">View Series →</a></div></div>
+    <div class="d2-pc anim"><div class="d2-pc-img"><div class="d2-pc-img-bg img-bags"></div></div><div class="d2-pc-body"><div class="d2-pc-code">02 / BMM</div><div class="d2-pc-title">Bag Making Machines</div><div class="d2-pc-desc">Precision woven PP and multiwall bag manufacturing.</div><a class="d2-pc-cta" href="#">View Series →</a></div></div>
+    <div class="d2-pc anim"><div class="d2-pc-img"><div class="d2-pc-img-bg img-bagging"></div></div><div class="d2-pc-body"><div class="d2-pc-code">03 / ABS</div><div class="d2-pc-title">Automatic Bagging Systems</div><div class="d2-pc-desc">Full-automation fill-seal with PLC control.</div><a class="d2-pc-cta" href="#">View Series →</a></div></div>
+    <div class="d2-pc anim"><div class="d2-pc-img"><div class="d2-pc-img-bg img-printing"></div></div><div class="d2-pc-body"><div class="d2-pc-code">04 / FPM</div><div class="d2-pc-title">Flexographic Printing</div><div class="d2-pc-desc">Multi-colour HD printing for industrial packaging.</div><a class="d2-pc-cta" href="#">View Series →</a></div></div>
+  </div>
+  <div class="d2-feature">
+    <div class="d2-fi"><div class="d2-fi-bg img-heritage" style="width:100%;height:100%"></div></div>
+    <div class="d2-fc">
+      <div class="d2-fc-tag">// Corporate Heritage</div>
+      <h2 class="d2-fc-h2">Eight Decades<br>of <em>Precision</em><br>Engineering</h2>
+      <p class="d2-fc-body">Founded in 1941 by the Newlong Industrial Group of Japan — trusted by the world's largest cement, chemical, food and agricultural corporations.</p>
+      <div class="d2-fc-list">
+        <div class="d2-fc-li"><div class="d2-fc-dot"></div><div class="d2-fc-text">ISO-certified precision manufacturing processes</div></div>
+        <div class="d2-fc-li"><div class="d2-fc-dot"></div><div class="d2-fc-text">Direct sales backed by NLI Japan engineering team</div></div>
+        <div class="d2-fc-li"><div class="d2-fc-dot"></div><div class="d2-fc-text">Machines deployed in 50+ countries globally</div></div>
+        <div class="d2-fc-li"><div class="d2-fc-dot"></div><div class="d2-fc-text">24/7 technical support and after-sales service</div></div>
+      </div>
+    </div>
+  </div>
+  <section class="d2-ind">
+    <div style="text-align:center;margin-bottom:0"><span style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:4px;color:#e53935;text-transform:uppercase;display:block;margin-bottom:10px">// Sectors We Power</span><h2 style="font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(30px,4.2vw,54px);color:#111;letter-spacing:-2px">Industries</h2></div>
+    <div class="d2-ind-grid">
+      <div class="d2-ib anim"><div class="d2-ib-bg img-food"></div><span class="d2-ib-num">01</span><div class="d2-ib-name">Food Processing</div></div>
+      <div class="d2-ib anim"><div class="d2-ib-bg img-chemical"></div><span class="d2-ib-num">02</span><div class="d2-ib-name">Chemicals</div></div>
+      <div class="d2-ib anim"><div class="d2-ib-bg img-cement"></div><span class="d2-ib-num">03</span><div class="d2-ib-name">Cement</div></div>
+      <div class="d2-ib anim"><div class="d2-ib-bg img-agri"></div><span class="d2-ib-num">04</span><div class="d2-ib-name">Animal Feed</div></div>
+      <div class="d2-ib anim"><div class="d2-ib-bg img-mineral"></div><span class="d2-ib-num">05</span><div class="d2-ib-name">Fertilizers</div></div>
+      <div class="d2-ib anim"><div class="d2-ib-bg img-pharma"></div><span class="d2-ib-num">06</span><div class="d2-ib-name">Minerals</div></div>
+    </div>
+  </section>
+  <footer class="d2-footer"><div class="d2-footer-top"><div><div class="d2-fbrand">NLI<span>.</span></div><p class="d2-fdesc">Japanese precision engineering delivering industrial packaging machinery since 1941.</p></div><div><div class="d2-fcol-h">Products</div><div class="d2-flinks"><a href="#">Industrial Sewing</a><a href="#">Bag Making</a><a href="#">Bagging Systems</a><a href="#">Printing</a></div></div><div><div class="d2-fcol-h">Industries</div><div class="d2-flinks"><a href="#">Food</a><a href="#">Chemicals</a><a href="#">Cement</a><a href="#">Agriculture</a></div></div><div><div class="d2-fcol-h">Company</div><div class="d2-flinks"><a href="#">About</a><a href="#">Heritage</a><a href="#">Careers</a><a href="#">Contact</a></div></div></div><div class="d2-footer-bottom"><span>© 2024 NLI Packaging Machines Pvt. Ltd.</span><span>Est. 1941 · Precision. Performance. Packaging.</span></div></footer>
+</div>
+
+<!-- ════ PAGE 3 — THE GRID ════ -->
+<div class="page d3" id="p2">
+  <nav class="d3-nav"><div class="d3-logo">NLI<span>.</span></div><div class="d3-nav-links"><a href="#">Machines</a><a href="#">Technology</a><a href="#">Industries</a><a href="#">Contact</a></div><button class="d3-ncta">Get Quote</button></nav>
+  <section class="d3-hero">
+    <div class="d3-hero-bg img-factory"></div>
+    <div class="d3-grid-overlay"></div><div class="d3-glow"></div><div class="d3-scan-line"></div>
+    <div class="d3-hero-content">
+      <div class="d3-badge"><div class="d3-bdot"></div><span class="d3-btext">Systems Online · Est. 1941</span></div>
+      <h1 class="d3-h1"><span class="dim">NEXT</span><br><span class="glow">GEN</span><br><span class="dim">PACK</span><br><span class="glow">TECH</span></h1>
+      <p class="d3-sub">Advanced Japanese Industrial Packaging Automation for the Future of Manufacturing</p>
+      <div class="d3-btns"><button class="d3-b1">Explore Systems</button><button class="d3-b2">View Catalogue</button></div>
+    </div>
+    <div class="d3-hud"><div class="d3-hud-item"><div class="d3-hval">80+</div><div class="d3-hlab">Years Active</div></div><div class="d3-hud-item"><div class="d3-hval">1K+</div><div class="d3-hlab">Units Deployed</div></div><div class="d3-hud-item"><div class="d3-hval">50+</div><div class="d3-hlab">Countries</div></div></div>
+  </section>
+  <section class="d3-machines">
+    <div class="d3-mhdr"><div><h2 class="d3-mh2">Machine <span>Arsenal</span></h2><p style="font-size:11px;letter-spacing:2px;color:rgba(255,255,255,.26);text-transform:uppercase;margin-top:6px">Drag to explore →</p></div><div class="d3-mnav"><button onclick="document.getElementById('d3s').scrollBy({left:-320,behavior:'smooth'})">←</button><button onclick="document.getElementById('d3s').scrollBy({left:320,behavior:'smooth'})">→</button></div></div>
+    <div class="d3-scroll" id="d3s">
+      <div class="d3-mcard anim"><div class="d3-mcard-img"><div class="d3-mcard-img-bg img-sewing"></div><div class="d3-mcard-hud"><div class="d3-mcard-id">ISM-SERIES</div><div class="d3-mcard-scan"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div></div></div><div class="d3-mcard-body"><div class="d3-mcard-name">Industrial Sewing Systems</div><div class="d3-mcard-tag">Bag Closing · High Speed</div></div></div>
+      <div class="d3-mcard anim"><div class="d3-mcard-img"><div class="d3-mcard-img-bg img-bagging"></div><div class="d3-mcard-hud"><div class="d3-mcard-id">ABS-SERIES</div><div class="d3-mcard-scan"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div></div></div><div class="d3-mcard-body"><div class="d3-mcard-name">Automatic Bagging Lines</div><div class="d3-mcard-tag">Fill &amp; Seal · Precision</div></div></div>
+      <div class="d3-mcard anim"><div class="d3-mcard-img"><div class="d3-mcard-img-bg img-bags"></div><div class="d3-mcard-hud"><div class="d3-mcard-id">BMM-SERIES</div><div class="d3-mcard-scan"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div></div></div><div class="d3-mcard-body"><div class="d3-mcard-name">Bag Making Machines</div><div class="d3-mcard-tag">Woven PP · Custom Width</div></div></div>
+      <div class="d3-mcard anim"><div class="d3-mcard-img"><div class="d3-mcard-img-bg img-printing"></div><div class="d3-mcard-hud"><div class="d3-mcard-id">FPM-SERIES</div><div class="d3-mcard-scan"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div></div></div><div class="d3-mcard-body"><div class="d3-mcard-name">Flexographic Printers</div><div class="d3-mcard-tag">Multi-Colour · HD Print</div></div></div>
+      <div class="d3-mcard anim"><div class="d3-mcard-img"><div class="d3-mcard-img-bg img-machines"></div><div class="d3-mcard-hud"><div class="d3-mcard-id">CUSTOM-LINE</div><div class="d3-mcard-scan"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div></div></div><div class="d3-mcard-body"><div class="d3-mcard-name">Custom Automation Lines</div><div class="d3-mcard-tag">Bespoke · End-to-End</div></div></div>
+    </div>
+  </section>
+  <div class="d3-stats"><div class="d3-sc anim"><div class="d3-sv">80+</div><div class="d3-sl">Years of Operation</div></div><div class="d3-sc anim"><div class="d3-sv">1K+</div><div class="d3-sl">Installations</div></div><div class="d3-sc anim"><div class="d3-sv">50+</div><div class="d3-sl">Countries</div></div><div class="d3-sc anim"><div class="d3-sv">99%</div><div class="d3-sl">Uptime Rate</div></div></div>
+  <section class="d3-ind">
+    <span class="d3-sec-tag">// Target Industries</span>
+    <h2 class="d3-sec-h2">Industries <span>We Power</span></h2>
+    <div class="d3-ind-grid">
+      <div class="d3-ic anim"><div class="d3-ic-bg img-food"></div><div class="d3-ic-overlay"><div class="d3-ic-num">SYS-01</div><div class="d3-ic-name">Food Processing</div><div class="d3-ic-tag">Hygiene Grade</div></div><div class="d3-corner"></div></div>
+      <div class="d3-ic anim"><div class="d3-ic-bg img-chemical"></div><div class="d3-ic-overlay"><div class="d3-ic-num">SYS-02</div><div class="d3-ic-name">Chemicals</div><div class="d3-ic-tag">Industrial Grade</div></div><div class="d3-corner"></div></div>
+      <div class="d3-ic anim"><div class="d3-ic-bg img-cement"></div><div class="d3-ic-overlay"><div class="d3-ic-num">SYS-03</div><div class="d3-ic-name">Cement Industry</div><div class="d3-ic-tag">Heavy Duty</div></div><div class="d3-corner"></div></div>
+      <div class="d3-ic anim"><div class="d3-ic-bg img-agri"></div><div class="d3-ic-overlay"><div class="d3-ic-num">SYS-04</div><div class="d3-ic-name">Animal Feed</div><div class="d3-ic-tag">Precision Fill</div></div><div class="d3-corner"></div></div>
+      <div class="d3-ic anim"><div class="d3-ic-bg img-mineral"></div><div class="d3-ic-overlay"><div class="d3-ic-num">SYS-05</div><div class="d3-ic-name">Fertilizers</div><div class="d3-ic-tag">Bulk Handling</div></div><div class="d3-corner"></div></div>
+      <div class="d3-ic anim"><div class="d3-ic-bg img-pharma"></div><div class="d3-ic-overlay"><div class="d3-ic-num">SYS-06</div><div class="d3-ic-name">Clean Room</div><div class="d3-ic-tag">Pharma Grade</div></div><div class="d3-corner"></div></div>
+    </div>
+  </section>
+  <footer class="d3-footer"><div class="d3-footer-top"><div><div class="d3-flogo">NLI<span>.</span></div><p class="d3-fdesc">Next-generation industrial packaging machinery powered by Japanese engineering heritage since 1941.</p></div><div><div class="d3-fcol-h">Systems</div><div class="d3-flinks"><a href="#">Sewing Systems</a><a href="#">Bag Making</a><a href="#">Bagging Lines</a><a href="#">Printing</a></div></div><div><div class="d3-fcol-h">Industries</div><div class="d3-flinks"><a href="#">Food</a><a href="#">Chemical</a><a href="#">Cement</a><a href="#">Agriculture</a></div></div><div><div class="d3-fcol-h">Company</div><div class="d3-flinks"><a href="#">About</a><a href="#">Heritage</a><a href="#">Certifications</a><a href="#">Contact</a></div></div></div><div class="d3-footer-bottom"><span>© 2024 NLI Packaging Machines Pvt. Ltd.</span><span style="color:#00ffc8">Est. 1941 · Systems Always Online</span></div></footer>
+</div>
+
+<!-- ════ PAGE 4 — THE CRAFT ════ -->
+<div class="page d4" id="p3">
+  <nav class="d4-nav"><div class="d4-logo"><span>NLI</span> Packaging</div><div class="d4-nav-links"><a href="#">Products</a><a href="#">Heritage</a><a href="#">Industries</a><a href="#">Contact</a></div><button class="d4-ncta">Enquire Now</button></nav>
+  <section class="d4-hero">
+    <div class="d4-hero-img-wrap"><div class="d4-hero-img-bg img-factory"></div><div class="d4-hero-img-overlay"></div><div class="d4-hero-badge"><div class="d4-badge-year">1941</div><div class="d4-badge-label">Year Established · Japan</div></div></div>
+    <div class="d4-hero-right">
+      <div class="d4-hr-pattern"></div>
+      <div class="d4-hr-tag">Newlong Industrial Co. Ltd. · Japanese Engineering</div>
+      <h1 class="d4-hr-h1">The Art of<br><em>Packaging</em><br>Excellence</h1>
+      <p class="d4-hr-desc">Precision-crafted industrial packaging machinery born from eight decades of Japanese engineering philosophy.</p>
+      <div class="d4-hr-btns"><button class="d4-b1">Explore Machines</button><button class="d4-b2">Our Heritage</button></div>
+      <div class="d4-hr-stats"><div><div class="d4-hs-n">80+</div><div class="d4-hs-l">Years</div></div><div><div class="d4-hs-n">1K+</div><div class="d4-hs-l">Machines</div></div><div><div class="d4-hs-n">50+</div><div class="d4-hs-l">Countries</div></div></div>
+    </div>
+  </section>
+  <section class="d4-heritage">
+    <div class="d4-hl">
+      <div class="d4-hl-tag">Corporate Heritage</div>
+      <h2 class="d4-hl-h2">Japanese<br><em>Craftsmanship</em><br>Since 1941</h2>
+      <p class="d4-hl-body">Founded on the Japanese principle of monozukuri — the art of making things with meticulous care — NLI has been crafting industrial excellence for over eight decades.</p>
+      <div class="d4-tl">
+        <div class="d4-tl-item"><div class="d4-tl-year">1941</div><div class="d4-tl-text"><strong>Foundation</strong><p>Established by Newlong Industrial Co. Japan with a vision for precision packaging.</p></div></div>
+        <div class="d4-tl-item"><div class="d4-tl-year">1970</div><div class="d4-tl-text"><strong>Innovation</strong><p>First automated bagging system developed, revolutionizing bulk material packaging.</p></div></div>
+        <div class="d4-tl-item"><div class="d4-tl-year">2000</div><div class="d4-tl-text"><strong>Automation</strong><p>PLC-controlled packaging lines launched for the era of smart manufacturing.</p></div></div>
+        <div class="d4-tl-item"><div class="d4-tl-year">Today</div><div class="d4-tl-text"><strong>Global Reach</strong><p>Machines in 50+ countries, trusted by world-leading industrial corporations.</p></div></div>
+      </div>
+    </div>
+    <div class="d4-hr"><div class="d4-hr-img-bg img-heritage"></div><div class="d4-hr-quote"><p>"Direct communication with the customer — solving problems promptly, at the lowest possible cost, at the highest achievable quality."</p></div></div>
+  </section>
+  <section class="d4-products">
+    <span class="d4-prod-tag">Product Range</span>
+    <h2 class="d4-prod-h2">Our <em>Machines</em></h2>
+    <div class="d4-prod-grid">
+      <div class="d4-prod-card anim"><div class="d4-prod-card-img"><div class="d4-prod-card-img-bg img-sewing"></div></div><div class="d4-prod-card-body"><div class="d4-pc-num">01 · ISM</div><div class="d4-pc-title">Industrial Sewing Machines</div><div class="d4-pc-desc">Precision bag closing for cement, food, fertilizer and chemical packaging.</div><a class="d4-pc-link" href="#">Explore →</a></div></div>
+      <div class="d4-prod-card anim"><div class="d4-prod-card-img"><div class="d4-prod-card-img-bg img-bags"></div></div><div class="d4-prod-card-body"><div class="d4-pc-num">02 · BMM</div><div class="d4-pc-title">Bag Making Machines</div><div class="d4-pc-desc">Premium woven polypropylene and multiwall bag manufacturing at scale.</div><a class="d4-pc-link" href="#">Explore →</a></div></div>
+      <div class="d4-prod-card anim"><div class="d4-prod-card-img"><div class="d4-prod-card-img-bg img-bagging"></div></div><div class="d4-prod-card-body"><div class="d4-pc-num">03 · ABS</div><div class="d4-pc-title">Automatic Bagging Systems</div><div class="d4-pc-desc">Fully automated fill-and-seal systems with intelligent PLC controls.</div><a class="d4-pc-link" href="#">Explore →</a></div></div>
+      <div class="d4-prod-card anim"><div class="d4-prod-card-img"><div class="d4-prod-card-img-bg img-printing"></div></div><div class="d4-prod-card-body"><div class="d4-pc-num">04 · FPM</div><div class="d4-pc-title">Flexographic Printing</div><div class="d4-pc-desc">Multi-colour high-resolution printing for industrial packaging branding.</div><a class="d4-pc-link" href="#">Explore →</a></div></div>
+    </div>
+  </section>
+  <section class="d4-ind-section">
+    <span class="d4-ind-tag">Industries</span>
+    <h2 class="d4-ind-h2">Sectors We <em>Serve</em></h2>
+    <div class="d4-ind-scroll">
+      <div class="d4-ind-tile"><div class="d4-ind-tile-bg img-food"></div><div class="d4-ind-tile-overlay"><div class="d4-ind-name">Food Processing</div><div class="d4-ind-tag-text">Hygiene Grade</div></div></div>
+      <div class="d4-ind-tile"><div class="d4-ind-tile-bg img-chemical"></div><div class="d4-ind-tile-overlay"><div class="d4-ind-name">Chemicals</div><div class="d4-ind-tag-text">Industrial Grade</div></div></div>
+      <div class="d4-ind-tile"><div class="d4-ind-tile-bg img-cement"></div><div class="d4-ind-tile-overlay"><div class="d4-ind-name">Cement</div><div class="d4-ind-tag-text">Heavy Duty</div></div></div>
+      <div class="d4-ind-tile"><div class="d4-ind-tile-bg img-agri"></div><div class="d4-ind-tile-overlay"><div class="d4-ind-name">Animal Feed</div><div class="d4-ind-tag-text">Precision Fill</div></div></div>
+      <div class="d4-ind-tile"><div class="d4-ind-tile-bg img-mineral"></div><div class="d4-ind-tile-overlay"><div class="d4-ind-name">Fertilizers</div><div class="d4-ind-tag-text">Bulk Handling</div></div></div>
+      <div class="d4-ind-tile"><div class="d4-ind-tile-bg img-pharma"></div><div class="d4-ind-tile-overlay"><div class="d4-ind-name">Clean Room</div><div class="d4-ind-tag-text">Pharma Grade</div></div></div>
+    </div>
+  </section>
+  <footer class="d4-footer"><div class="d4-footer-top"><div><div class="d4-fbrand">NLI Packaging</div><p class="d4-fdesc">Artisan Japanese engineering precision delivering industrial packaging excellence since 1941.</p></div><div><div class="d4-fcol-h">Products</div><div class="d4-flinks"><a href="#">Industrial Sewing</a><a href="#">Bag Making</a><a href="#">Bagging Systems</a><a href="#">Printing</a></div></div><div><div class="d4-fcol-h">Industries</div><div class="d4-flinks"><a href="#">Food</a><a href="#">Chemicals</a><a href="#">Cement</a><a href="#">Agriculture</a></div></div><div><div class="d4-fcol-h">Company</div><div class="d4-flinks"><a href="#">Heritage</a><a href="#">Engineering</a><a href="#">Certifications</a><a href="#">Contact</a></div></div></div><div class="d4-footer-bottom"><span>© 2024 NLI Packaging Machines Pvt. Ltd.</span><span>Est. 1941 · The Art of Industrial Craft</span></div></footer>
+</div>
+
+<!-- ════ PAGE 5 — THE SIGNAL ════ -->
+<div class="page d5" id="p4">
+  <nav class="d5-nav"><div class="d5-logo">NLI<span>.</span></div><div class="d5-nav-links"><a href="#">Products</a><a href="#">Industries</a><a href="#">Technology</a><a href="#">About</a></div><div class="d5-nav-acts"><button class="d5-nb1">Our Heritage</button><button class="d5-nb2">Book Demo</button></div></nav>
+  <section class="d5-hero">
+    <div class="d5-hero-mesh"></div><div class="d5-hero-dots"></div>
+    <div class="d5-hero-left">
+      <div class="d5-chip"><div class="d5-chip-pulse"></div><span class="d5-chip-text">Industrial Systems · Est. 1941</span></div>
+      <h1 class="d5-h1">Smarter<br><span>Industrial</span><br>Packaging</h1>
+      <p class="d5-sub">Japanese engineering precision meets modern automation. NLI Packaging Machines delivers systems that power global industry — from cement plants to food factories.</p>
+      <div class="d5-btns"><button class="d5-b1">Explore Products</button><button class="d5-b2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>Watch Demo</button></div>
+      <div class="d5-trust"><div class="d5-avatars"><div class="d5-av">AC</div><div class="d5-av">IT</div><div class="d5-av">GP</div><div class="d5-av">+</div></div><p class="d5-trust-text">Trusted by <strong>1,000+</strong> industrial clients worldwide</p></div>
+    </div>
+    <div class="d5-hero-right">
+      <div style="position:relative;width:100%">
+        <div class="d5-main-img"><div class="d5-main-img-bg img-sewing"></div></div>
+        <div class="d5-fc c1"><div class="d5-fc-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div><div class="d5-fc-val">80+</div><div class="d5-fc-label">Years Engineering</div></div></div>
+        <div class="d5-fc c2"><div class="d5-fc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><div><div class="d5-fc-val">99%</div><div class="d5-fc-label">Uptime Rate</div></div></div>
+        <div class="d5-fc c3"><div class="d5-fc-icon"><svg viewBox="0 0 24 24"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg></div><div><div class="d5-fc-val">50+</div><div class="d5-fc-label">Countries</div></div></div>
+      </div>
+    </div>
+  </section>
+  <div class="d5-logos-bar"><div class="d5-logos-label">Trusted by Industry Leaders</div><div class="d5-logos-track"><div class="d5-logos-inner"><span class="d5-logo-item">ACC Cement</span><span class="d5-logo-item">ITC Agri</span><span class="d5-logo-item">Tata Chem</span><span class="d5-logo-item">UltraTech</span><span class="d5-logo-item">Coromandel</span><span class="d5-logo-item">Pidilite</span><span class="d5-logo-item">Zuari Agro</span><span class="d5-logo-item">ACC Cement</span><span class="d5-logo-item">ITC Agri</span><span class="d5-logo-item">Tata Chem</span><span class="d5-logo-item">UltraTech</span><span class="d5-logo-item">Coromandel</span><span class="d5-logo-item">Pidilite</span><span class="d5-logo-item">Zuari Agro</span></div></div></div>
+  <section class="d5-products">
+    <span class="d5-prod-tag">Our Products</span>
+    <h2 class="d5-prod-h2">Industrial <span>Machine Lines</span></h2>
+    <div class="d5-prod-grid">
+      <div class="d5-prod-card anim"><div class="d5-prod-card-img"><div class="d5-prod-card-img-bg img-sewing"></div></div><div class="d5-prod-card-body"><span class="d5-prod-badge">ISM Series</span><div class="d5-prod-title">Industrial Sewing Machines</div><p class="d5-prod-desc">High-speed bag closing systems for cement, chemicals, food and fertilizer packaging industries.</p><a class="d5-prod-link" href="#">Explore Series →</a></div></div>
+      <div class="d5-prod-card anim"><div class="d5-prod-card-img"><div class="d5-prod-card-img-bg img-bagging"></div></div><div class="d5-prod-card-body"><span class="d5-prod-badge">ABS Series</span><div class="d5-prod-title">Automatic Bagging Systems</div><p class="d5-prod-desc">PLC-controlled fill-and-seal automation for powders, granules and bulk materials at scale.</p><a class="d5-prod-link" href="#">Explore Series →</a></div></div>
+      <div class="d5-prod-card anim"><div class="d5-prod-card-img"><div class="d5-prod-card-img-bg img-bags"></div></div><div class="d5-prod-card-body"><span class="d5-prod-badge">BMM Series</span><div class="d5-prod-title">Bag Making Machines</div><p class="d5-prod-desc">Precision woven PP and multiwall bag manufacturing systems at industrial throughput.</p><a class="d5-prod-link" href="#">Explore Series →</a></div></div>
+      <div class="d5-prod-card anim"><div class="d5-prod-card-img"><div class="d5-prod-card-img-bg img-printing"></div></div><div class="d5-prod-card-body"><span class="d5-prod-badge">FPM Series</span><div class="d5-prod-title">Flexographic Printing</div><p class="d5-prod-desc">Multi-colour HD flexographic printing machines for industrial packaging substrates.</p><a class="d5-prod-link" href="#">Explore Series →</a></div></div>
+    </div>
+  </section>
+  <section class="d5-process">
+    <span class="d5-proc-tag">Our Process</span>
+    <h2 class="d5-proc-h2">How We <span>Deliver</span></h2>
+    <div class="d5-proc-steps">
+      <div class="d5-ps"><div class="d5-ps-num">01</div><div class="d5-ps-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 014 5.18 2 2 0 016 3h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L10.09 10a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 15.86 15.86 0 002.81.7A2 2 0 0122 16.92z"/></svg></div><div class="d5-ps-title">Consultation</div><div class="d5-ps-desc">Understanding your production needs</div></div>
+      <div class="d5-ps"><div class="d5-ps-num">02</div><div class="d5-ps-icon"><svg viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg></div><div class="d5-ps-title">Engineering</div><div class="d5-ps-desc">Custom design and CAD development</div></div>
+      <div class="d5-ps"><div class="d5-ps-num">03</div><div class="d5-ps-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div><div class="d5-ps-title">Manufacturing</div><div class="d5-ps-desc">ISO-certified precision manufacturing</div></div>
+      <div class="d5-ps"><div class="d5-ps-num">04</div><div class="d5-ps-icon"><svg viewBox="0 0 24 24"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0018 9h-1.26A8 8 0 103 16.3"/></svg></div><div class="d5-ps-title">Installation</div><div class="d5-ps-desc">Professional on-site commissioning</div></div>
+      <div class="d5-ps"><div class="d5-ps-num">05</div><div class="d5-ps-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="d5-ps-title">Support</div><div class="d5-ps-desc">Lifetime technical support</div></div>
+    </div>
+  </section>
+  <section class="d5-ind">
+    <span class="d5-ind-tag">Industries</span>
+    <h2 class="d5-ind-h2">Sectors <span>We Serve</span></h2>
+    <div class="d5-ind-grid">
+      <div class="d5-ind-card anim"><div class="d5-ind-card-img"><div class="d5-ind-card-img-bg img-food"></div></div><div class="d5-ind-card-body"><div><span class="d5-ind-dot"></span><span class="d5-ind-name">Food Processing</span></div><div class="d5-ind-sub">Hygiene Grade Systems</div></div></div>
+      <div class="d5-ind-card anim"><div class="d5-ind-card-img"><div class="d5-ind-card-img-bg img-chemical"></div></div><div class="d5-ind-card-body"><div><span class="d5-ind-dot"></span><span class="d5-ind-name">Chemicals</span></div><div class="d5-ind-sub">Industrial Grade Packaging</div></div></div>
+      <div class="d5-ind-card anim"><div class="d5-ind-card-img"><div class="d5-ind-card-img-bg img-cement"></div></div><div class="d5-ind-card-body"><div><span class="d5-ind-dot"></span><span class="d5-ind-name">Cement Industry</span></div><div class="d5-ind-sub">Heavy Duty Bulk Systems</div></div></div>
+      <div class="d5-ind-card anim"><div class="d5-ind-card-img"><div class="d5-ind-card-img-bg img-agri"></div></div><div class="d5-ind-card-body"><div><span class="d5-ind-dot"></span><span class="d5-ind-name">Animal Feed</span></div><div class="d5-ind-sub">Precision Fill &amp; Seal</div></div></div>
+      <div class="d5-ind-card anim"><div class="d5-ind-card-img"><div class="d5-ind-card-img-bg img-mineral"></div></div><div class="d5-ind-card-body"><div><span class="d5-ind-dot"></span><span class="d5-ind-name">Fertilizers</span></div><div class="d5-ind-sub">Bulk Handling Solutions</div></div></div>
+      <div class="d5-ind-card anim"><div class="d5-ind-card-img"><div class="d5-ind-card-img-bg img-pharma"></div></div><div class="d5-ind-card-body"><div><span class="d5-ind-dot"></span><span class="d5-ind-name">Clean Room</span></div><div class="d5-ind-sub">Pharma &amp; Semicon Grade</div></div></div>
+    </div>
+  </section>
+  <div class="d5-stats"><div class="d5-sb anim"><div class="d5-sb-val">80+</div><div class="d5-sb-label">Years of Engineering Excellence</div></div><div class="d5-sb anim"><div class="d5-sb-val">1K+</div><div class="d5-sb-label">Machines Installed Globally</div></div><div class="d5-sb anim"><div class="d5-sb-val">50+</div><div class="d5-sb-label">Countries Served</div></div><div class="d5-sb anim"><div class="d5-sb-val">99%</div><div class="d5-sb-label">Machine Uptime Rate</div></div></div>
+  <section class="d5-cta"><div class="d5-cta-bg"></div><h2 class="d5-cta-h2">Ready to <span>Transform</span><br>Your Packaging?</h2><p class="d5-cta-p">Partner with eight decades of Japanese engineering heritage. Get a custom solution today.</p><div class="d5-cta-btns"><button class="d5-b1" style="font-size:14px;padding:14px 40px">Book a Consultation</button><button class="d5-b2" style="font-size:14px;padding:14px 40px">View Catalogue</button></div></section>
+  <footer class="d5-footer"><div class="d5-footer-top"><div><div class="d5-flogo">NLI<span>.</span></div><p class="d5-fdesc">Smart industrial packaging machinery backed by Japanese engineering precision since 1941.</p></div><div><div class="d5-fcol-h">Products</div><div class="d5-flinks"><a href="#">Industrial Sewing</a><a href="#">Bag Making</a><a href="#">Bagging Systems</a><a href="#">Printing</a></div></div><div><div class="d5-fcol-h">Industries</div><div class="d5-flinks"><a href="#">Food</a><a href="#">Chemicals</a><a href="#">Cement</a><a href="#">Agriculture</a></div></div><div><div class="d5-fcol-h">Company</div><div class="d5-flinks"><a href="#">About</a><a href="#">Heritage</a><a href="#">Certifications</a><a href="#">Contact</a></div></div></div><div class="d5-footer-bottom"><span>© 2024 NLI Packaging Machines Pvt. Ltd. All rights reserved.</span><span>Est. 1941 · Japanese Engineering Heritage</span></div></footer>
+</div>
+
+<script>
+/* CURSOR */
+const cur=document.getElementById('cur'),trail=document.getElementById('trail');
+let mx=0,my=0,tx=0,ty=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+(function loop(){tx+=(mx-tx)*.14;ty+=(my-ty)*.14;trail.style.left=tx+'px';trail.style.top=ty+'px';requestAnimationFrame(loop)})();
+document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>{cur.style.width='26px';cur.style.height='26px'});el.addEventListener('mouseleave',()=>{cur.style.width='12px';cur.style.height='12px'})});
+
+/* TABS */
+function switchTab(n){
+  document.querySelectorAll('.page').forEach((p,i)=>p.classList.toggle('on',i===n));
+  document.querySelectorAll('.tab').forEach((b,i)=>b.classList.toggle('on',i===n));
+  window.scrollTo({top:0,behavior:'instant'});
+  setTimeout(()=>initAnims('#p'+n),60);
+}
+
+/* SCROLL ANIMATIONS */
+function initAnims(sel){
+  const io=new IntersectionObserver(entries=>{entries.forEach(en=>{if(en.isIntersecting){en.target.classList.add('vis');io.unobserve(en.target)}})},{threshold:.1,rootMargin:'0px 0px -30px 0px'});
+  document.querySelectorAll(sel+' .anim:not(.vis)').forEach((el,i)=>{el.style.transitionDelay=(i%4)*.09+'s';io.observe(el)});
+}
+initAnims('#p0');
+
+/* DRAG SCROLL */
+function dragScroll(el){
+  let down=false,sx,sl;
+  el.addEventListener('mousedown',e=>{down=true;sx=e.pageX-el.offsetLeft;sl=el.scrollLeft});
+  document.addEventListener('mouseup',()=>down=false);
+  el.addEventListener('mousemove',e=>{if(!down)return;e.preventDefault();el.scrollLeft=sl-(e.pageX-el.offsetLeft-sx)*1.5});
+}
+const d3s=document.getElementById('d3s');
+const d4s=document.querySelector('.d4-ind-scroll');
+if(d3s)dragScroll(d3s);
+if(d4s)dragScroll(d4s);
+
+/* PARALLAX */
+window.addEventListener('scroll',()=>{
+  ['.d1-hero-bg','.d3-hero-bg','.d4-hero-img-bg'].forEach(sel=>{
+    document.querySelectorAll(sel).forEach(el=>{
+      const sec=el.closest('section');
+      if(!sec)return;
+      const r=sec.getBoundingClientRect();
+      if(r.bottom>0&&r.top<window.innerHeight)el.style.transform=`translateY(${r.top*.12}px) scale(1.08)`;
+    });
+  });
+},{passive:true});
+
+/* COUNTER ANIMATION */
+function animCount(el){
+  if(el.dataset.done)return;el.dataset.done=1;
+  const txt=el.textContent.trim(),num=parseFloat(txt.replace(/[^0-9.]/g,'')),suf=txt.replace(/[0-9.]/g,'');
+  if(!num)return;
+  let s=null;const d=1500;
+  (function tick(t){if(!s)s=t;const p=Math.min((t-s)/d,1),e=p<.5?2*p*p:(4-2*p)*p-1;el.textContent=Math.floor(e*num)+suf;if(p<1)requestAnimationFrame(tick)})(performance.now());
+}
+const cio=new IntersectionObserver(entries=>entries.forEach(en=>{if(en.isIntersecting)en.target.querySelectorAll('.d1-stat-n,.d3-sv,.d5-sb-val').forEach(animCount)}),{threshold:.4});
+document.querySelectorAll('.d1-statsbar,.d3-stats,.d5-stats').forEach(s=>cio.observe(s));
+</script>
+</body>
+</html>
